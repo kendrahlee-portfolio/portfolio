@@ -113,10 +113,25 @@
               <sc-for list="{{ c.impact }}" as="point" hint-placeholder-count="3">
                 <div style="display:flex; gap:var(--space-2); font-size:14px; color:var(--color-text);">
                   <span style="color:var(--color-accent); font-weight:800;">—</span>
-                  <span>{{ point }}</span>
+                  <sc-if value="{{ point.href }}" hint-placeholder-val="{{ false }}">
+                    <span>{{ point.text }} <a href="{{ point.href }}" target="_blank" rel="noopener">↗</a></span>
+                  </sc-if>
+                  <sc-if value="{{ point.noHref }}" hint-placeholder-val="{{ true }}">
+                    <span>{{ point.text }}</span>
+                  </sc-if>
                 </div>
               </sc-for>
             </div>
+            <sc-if value="{{ c.hasLink }}" hint-placeholder-val="{{ false }}">
+              <a href="{{ c.href }}" target="_blank" rel="noopener" class="btn btn-ghost" style="margin-top:var(--space-4); padding-left:0;">Watch →</a>
+            </sc-if>
+            <sc-if value="{{ c.hasLinks }}" hint-placeholder-val="{{ false }}">
+              <div style="display:flex; gap:var(--space-4); margin-top:var(--space-4);">
+                <sc-for list="{{ c.links }}" as="lnk" hint-placeholder-count="2">
+                  <a href="{{ lnk.href }}" target="_blank" rel="noopener" class="btn btn-ghost" style="padding-left:0;">{{ lnk.label }}</a>
+                </sc-for>
+              </div>
+            </sc-if>
           </div>
         </div>
         <hr class="hr">
@@ -124,16 +139,31 @@
     </sc-for>
   </section>
 
+  <hr class="hr" style="margin:0;">
+
+  <!-- DISTRICT OF VIDA -->
+  <section style="padding:var(--space-8) var(--space-6); max-width:1200px; margin:0 auto;" data-screen-label="District of VIDA">
+    <span class="tag tag-accent" style="margin-bottom:var(--space-3);">Cross-Brand Strategy</span>
+    <h2 style="margin-top:var(--space-3); margin-bottom:var(--space-3);">District of VIDA</h2>
+    <p style="font-size:19px; max-width:640px; color:color-mix(in srgb, var(--color-text) 85%, transparent); margin-bottom:var(--space-2);">Turning seven standalone brands into one ecosystem members actually want to explore.</p>
+    <p style="font-size:16px; max-width:700px; color:color-mix(in srgb, var(--color-text) 75%, transparent); margin-bottom:var(--space-6);">Built the strategic framework connecting VIDA Fitness, Aura Spa, Bang Salon, VIDA Pilates, SweatBox, Bar VIDA, and Penthouse Pool &amp; Lounge into a single cross-brand experience — designed to increase engagement, drive multi-brand usage, and turn one-service members into full-ecosystem members.</p>
+    <figure style="margin:0; background:var(--color-surface); border:1px solid var(--color-divider);">
+      <img src="images/district-of-vida.png" style="width:100%; height:auto; display:block;">
+    </figure>
+  </section>
+
+  <hr class="hr" style="margin:0;">
+
   <!-- MORE WORK -->
   <section style="padding:var(--space-6) var(--space-6) var(--space-8); max-width:1200px; margin:0 auto;" data-screen-label="More Work">
     <h6 style="color:var(--color-accent-700);">More Work</h6>
     <h2 style="margin-bottom:var(--space-6);">Ongoing series &amp; additional programs</h2>
     <div style="display:grid; grid-template-columns:1fr 1fr;">
       <sc-for list="{{ moreWork }}" as="m" hint-placeholder-count="8">
-        <div class="card" style="border-top:2px solid var(--color-divider); border-radius:0; background:transparent; padding:var(--space-4) var(--space-4) var(--space-4) 0;">
+        <a href="{{ m.href }}" class="card" style="border-top:2px solid var(--color-divider); border-radius:0; background:transparent; padding:var(--space-4) var(--space-4) var(--space-4) 0; text-decoration:none; color:inherit;" style-hover="background:color-mix(in srgb, var(--color-text) 4%, transparent);">
           <div class="card-title">{{ m.title }}</div>
           <div class="card-body" style="opacity:1; color:color-mix(in srgb, var(--color-text) 65%, transparent);">{{ m.tag }}</div>
-        </div>
+        </a>
       </sc-for>
     </div>
   </section>
@@ -149,7 +179,9 @@
         <tr>
           <td style="width:140px; font-weight:600; color:color-mix(in srgb, var(--color-text) 65%, transparent);">{{ s.when }}</td>
           <td>
-            <div style="font-weight:600; font-size:16px;">{{ s.role }}</div>
+            <a href="{{ s.href }}" style="text-decoration:none; color:inherit;" style-hover="color:var(--color-accent-700);">
+              <div style="font-weight:600; font-size:16px;">{{ s.role }}</div>
+            </a>
             <div style="font-size:14px; color:color-mix(in srgb, var(--color-text) 70%, transparent); margin-top:2px;">{{ s.topic }}</div>
           </td>
         </tr>
@@ -180,30 +212,38 @@ class Component extends DCLogic {
     const campaignsRaw = [
       {
         tag: 'Integrated Campaign Strategy',
-        title: 'Penthouse Pool Campaign',
+        title: 'Penthouse Pool 2026 Summer Reopening Campaign',
         role: 'Summer 2026 — Penthouse Pool Club',
         body: 'Led strategy, creative direction, and execution of Penthouse Pool Club\u2019s 2026 summer campaign, repositioning the brand as one of Washington, DC\u2019s premier rooftop destinations through a social-first, full-funnel approach — from teaser content through experiential events and urgency-driven membership pushes.',
         impact: [
-          'Named #1 Spot in Fox 5\u2019s Zip Trip to Navy Yard 5 Must Stops',
-          'Top creative achieved a 4.6% CTR at $0.35 CPC',
-          'Multiple campaigns sustained 2\u20134%+ CTR with CPCs under $0.70 at scale',
+          { text: 'Named #1 Spot in Fox 5\u2019s Zip Trip to Navy Yard 5 Must Stops', href: 'https://www.fox5dc.com/video/fmc-j2jhd5q2mvgc7pz0' },
+          { text: 'Top creative achieved a 4.6% CTR at $0.35 CPC' },
+          { text: 'Multiple campaigns sustained 2\u20134%+ CTR with CPCs under $0.70 at scale' },
         ],
         placeholder: 'campaign photography',
         image: 'images/penthouse-pool.jpg',
+        links: [
+          { label: 'Opening Reel →', href: 'https://www.instagram.com/reel/DWuE4ufAHaG/' },
+          { label: 'Campaign Carousel →', href: 'https://www.instagram.com/p/DXw-izBidJq/?img_index=1' },
+        ],
       },
       {
         tag: 'Event Production',
-        title: 'Pride 2026',
+        title: 'Pride (2022\u20132026) & WorldPride 2025',
         role: 'VIDA Fitness & Penthouse Pool Club',
-        body: 'Led strategy, planning, and execution of VIDA Fitness\u2019 2026 Pride campaign — month-long community activations, a fundraising silent auction, and experiential programming across multiple brands, with partnerships spanning IMP, Live Nation, and premium hospitality names.',
+        body: 'Led strategy, planning, and execution of VIDA Fitness\u2019 annual Pride campaigns from 2022 through 2026, delivering month-long community activations, fundraising initiatives, and experiential marketing across multiple brands — including a landmark 2025 WorldPride production with branded parade floats, a signature fundraising event, and citywide brand activations.',
         impact: [
-          'Ran the annual fundraising auction end-to-end, from procurement to guest experience',
-          'Coordinated sponsors, vendors, and community partners across touchpoints',
-          'Expanded visibility beyond the fitness clubs into hospitality and nightlife',
+          { text: 'Directed integrated Pride programming across VIDA Fitness and Penthouse Pool Club every year since 2022' },
+          { text: 'Produced the annual fundraising silent auction end-to-end, securing partnerships with IMP and Live Nation', href: 'https://www.32auctions.com/VIDAHasPride2026' },
+          { text: 'Managed two branded floats in the 2025 WorldPride Parade, plus floats in Pride Parades 2022\u20132024', href: 'https://www.youtube.com/watch?v=1O6z_cEoTDY&list=LL' },
+          { text: 'Conceived Night of Pride, a signature fundraiser that earned local TV coverage on WUSA9' },
         ],
         placeholder: 'event photography',
         image: 'images/pride-main.jpg',
         extraImages: ['images/pride-extra-1-sm.jpg', 'images/pride-extra-2-sm.jpg'],
+        links: [
+          { label: 'WorldPride Carousel →', href: 'https://www.instagram.com/p/DZm6jsrj7tA/?img_index=1' },
+        ],
       },
       {
         tag: 'Full-Funnel Marketing',
@@ -211,12 +251,16 @@ class Component extends DCLogic {
         role: 'January 2026 — VIDA Fitness',
         body: 'Managed and executed a January brand-reset campaign that shifted VIDA away from traditional New Year urgency toward emotional reconnection — spanning paid social, UGC, an interactive quiz, a referral engine, and an open house activation, reinforced in-club through screens and instructor content.',
         impact: [
-          'Built a \u201cCheck Your Spark\u201d quiz to drive segmented landing page traffic',
-          'Scaled high-performing organic creative into paid media',
-          'Extended into retention via themed content pillars (Feel Strong, Feel Zen, Feel Energized)',
+          { text: 'Built a \u201cCheck Your Spark\u201d quiz to drive segmented landing page traffic' },
+          { text: 'Scaled high-performing organic creative into paid media' },
+          { text: 'Extended into retention via themed content pillars (Feel Strong, Feel Zen, Feel Energized)' },
         ],
         placeholder: 'campaign creative',
         image: 'images/feel-something.jpg',
+        links: [
+          { label: 'Pharma Spoof →', href: 'https://youtube.com/shorts/FDh4WMwkazw?feature=share' },
+          { label: 'Emotive →', href: 'https://youtube.com/shorts/QJ2Yc3DOOxs?feature=share' },
+        ],
       },
       {
         tag: 'Member Experience',
@@ -224,12 +268,13 @@ class Component extends DCLogic {
         role: 'September 2025 — VIDA Fitness',
         body: 'Orchestrated VIDA\u2019s first annual member appreciation event, managing end-to-end execution — creative concept, team management, member communications, and on-site activations across six locations to strengthen community bonds and showcase brand culture.',
         impact: [
-          'Generated 100+ new memberships and 150 leads',
-          '560 member votes across six locations',
-          'Paid social strategy delivered a 4:1 ROI',
+          { text: 'Generated 100+ new memberships and 150 leads' },
+          { text: '560 member votes across six locations' },
+          { text: 'Paid social strategy delivered a 4:1 ROI' },
         ],
         placeholder: 'event photography',
         image: 'images/vida-homecoming.jpg',
+        href: 'https://www.youtube.com/playlist?list=PLlGe1bG5ZoFJwLhBvWGK0mlq7ImXFgh60',
       },
       {
         tag: 'Brand Partnership',
@@ -237,12 +282,13 @@ class Component extends DCLogic {
         role: 'In partnership with WMATA',
         body: 'Conceived and executed a trend-driven fashion event leveraging the \u201cbrat summer\u201d cultural moment, in partnership with the Washington Metropolitan Area Transit Authority — full production from venue and talent to cross-promotional marketing across VIDA and partner channels.',
         impact: [
-          'Negotiated and managed a first-of-its-kind transit authority partnership',
-          'Merged fitness, fashion, and pop culture into one activation',
-          'Positioned VIDA as a culturally relevant lifestyle brand',
+          { text: 'Negotiated and managed a first-of-its-kind transit authority partnership' },
+          { text: 'Merged fitness, fashion, and pop culture into one activation' },
+          { text: 'Positioned VIDA as a culturally relevant lifestyle brand' },
         ],
         placeholder: 'event video',
         image: 'images/brat-summer.jpeg',
+        href: 'https://youtu.be/G2YgwW-htvs',
       },
     ];
 
@@ -252,6 +298,10 @@ class Component extends DCLogic {
       noImage: !c.image,
       hasExtra: !!(c.extraImages && c.extraImages.length),
       extraImages: c.extraImages || [],
+      hasLink: !!c.href,
+      hasLinks: !!(c.links && c.links.length),
+      links: c.links || [],
+      impact: c.impact.map((p) => ({ ...p, noHref: !p.href })),
     }));
 
     return {
@@ -266,23 +316,23 @@ class Component extends DCLogic {
       ],
       campaigns,
       moreWork: [
-        { title: 'Pride & WorldPride Activations', tag: '2022\u20132025 — Event Production, incl. WorldPride Parade floats' },
-        { title: 'VIDA Thrive 5K', tag: '2022\u20132024 — Annual charity running event series' },
-        { title: 'Inside a VIDA Group Fitness Class', tag: 'Video series — member education & barrier reduction' },
-        { title: 'Wellness Series at Aura spa', tag: 'Educational content — luxury wellness brand' },
-        { title: 'VIDA Trainer Tips', tag: 'Ongoing video series — trainer expert positioning' },
-        { title: 'VIDA Pilates: Inside the Studio', tag: 'Brand storytelling — Classical Pilates awareness' },
-        { title: 'October Om', tag: '2024 — Monthly yoga content series' },
-        { title: 'Take Me Fishing (RBFF)', tag: 'Social strategy, Disney partnership, and national campaigns' },
+        { title: 'Pride & WorldPride Activations', tag: '2022\u20132025 — Event Production, incl. WorldPride Parade floats', href: 'https://youtu.be/lzf_jKWfdEY' },
+        { title: 'VIDA Thrive 5K', tag: '2022\u20132024 — Annual charity running event series', href: 'https://www.youtube.com/playlist?list=PLlGe1bG5ZoFIG7idiqllqAele6MY_TiuT' },
+        { title: 'Inside a VIDA Group Fitness Class', tag: 'Video series — member education & barrier reduction', href: 'https://www.youtube.com/playlist?list=PLlGe1bG5ZoFIBrqd1O25dywACdXBx_yDe' },
+        { title: 'Wellness Series at Aura spa', tag: 'Educational content — luxury wellness brand', href: 'https://www.youtube.com/playlist?list=PLlGe1bG5ZoFJMTBOZrqkqJgE6EkBMlA5D' },
+        { title: 'VIDA Trainer Tips', tag: 'Ongoing video series — trainer expert positioning', href: 'https://www.youtube.com/playlist?list=PLlGe1bG5ZoFKyBPJ02Pttc4zl6oQNJOT8' },
+        { title: 'VIDA Pilates: Inside the Studio', tag: 'Brand storytelling — Classical Pilates awareness', href: 'https://youtube.com/playlist?list=PLlGe1bG5ZoFJZPtvNXZo1h60Mo8hMe8HN&si=qkItxuERbWIJ2B72' },
+        { title: 'October Om', tag: '2024 — Monthly yoga content series', href: 'https://youtu.be/0Z6cEs8-YSY?si=M7viZpEaivQ9yCtA' },
+        { title: 'Take Me Fishing (RBFF)', tag: 'Social strategy, Disney partnership, and national campaigns', href: 'https://takemefishing.org/' },
       ],
       speaking: [
-        { when: 'Mar 2026', role: 'Health & Fitness Association Conference & Expo — Speaker', topic: 'Make Your Social Media Build More Than Just Muscle' },
-        { when: 'Jan 2026', role: 'Featured Contributor', topic: 'How Gyms Are Keeping Members After the January Rush' },
-        { when: 'Oct 2025', role: 'Fitness Technology Summit — Speaker', topic: 'Future State: Gen Z and Alpha in Motion' },
-        { when: 'May 2024', role: 'Leveraging Social Media for Group Fitness Instructors — Speaker', topic: '' },
-        { when: '2020 & 2022', role: 'State Marketing Workshop — Presenter', topic: 'How Social Influencers Can Help Amplify Your Message; Bridging Connection' },
-        { when: '2020\u20132021', role: 'Photoshelter Strategy Summit — Speaker', topic: '' },
-        { when: '\u2014', role: 'Social Media Marketers Interview — Featured Expert', topic: '' },
+        { when: 'Mar 2026', role: 'Health & Fitness Association Conference & Expo — Speaker', topic: 'Make Your Social Media Build More Than Just Muscle', href: 'https://hub.healthandfitness.org/hfa-show-speaker-kendra-lee' },
+        { when: 'Jan 2026', role: 'Featured Contributor', topic: 'How Gyms Are Keeping Members After the January Rush', href: 'https://athletechnews.com/how-gyms-are-keeping-members-after-the-january-rush-why-february-matters-more/' },
+        { when: 'Oct 2025', role: 'Fitness Technology Summit — Speaker', topic: 'Future State: Gen Z and Alpha in Motion', href: 'https://thefitnesstechsummit.com/speaker/kendra-lee/' },
+        { when: 'May 2024', role: 'Leveraging Social Media for Group Fitness Instructors — Speaker', topic: '', href: 'https://youtu.be/nnylk6z3rN4' },
+        { when: '2020 & 2022', role: 'State Marketing Workshop — Presenter', topic: 'How Social Influencers Can Help Amplify Your Message; Bridging Connection', href: 'https://www.takemefishing.org/corporate/resource-center/webinars-workshops/2020-state-marketing-workshop/' },
+        { when: '2020\u20132021', role: 'Photoshelter Strategy Summit — Speaker', topic: '', href: 'https://go.photoshelter.com/brands/blog/2021-vision-speakers/' },
+        { when: '\u2014', role: 'Social Media Marketers Interview — Featured Expert', topic: '', href: 'https://marketerinterview.com/content-creation-and-management-skills/' },
       ],
     };
   }
