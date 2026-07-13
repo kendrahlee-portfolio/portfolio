@@ -113,12 +113,7 @@
               <sc-for list="{{ c.impact }}" as="point" hint-placeholder-count="3">
                 <div style="display:flex; gap:var(--space-2); font-size:14px; color:var(--color-text);">
                   <span style="color:var(--color-accent); font-weight:800;">—</span>
-                  <sc-if value="{{ point.href }}" hint-placeholder-val="{{ false }}">
-                    <span>{{ point.text }} <a href="{{ point.href }}" target="_blank" rel="noopener">↗</a></span>
-                  </sc-if>
-                  <sc-if value="{{ point.noHref }}" hint-placeholder-val="{{ true }}">
-                    <span>{{ point.text }}</span>
-                  </sc-if>
+                  <span>{{ point.text }}<sc-if value="{{ point.hasHref }}" hint-placeholder-val="{{ false }}"> <a href="{{ point.href }}" target="_blank" rel="noopener">↗</a></sc-if></span>
                 </div>
               </sc-for>
             </div>
@@ -301,7 +296,7 @@ class Component extends DCLogic {
       hasLink: !!c.href,
       hasLinks: !!(c.links && c.links.length),
       links: c.links || [],
-      impact: c.impact.map((p) => ({ ...p, noHref: !p.href })),
+      impact: c.impact.map((p) => ({ ...p, hasHref: !!p.href })),
     }));
 
     return {
