@@ -5,8 +5,8 @@
   --color-bg: #f3f2f2;
   --color-surface: #eae9e9;
   --color-text: #201e1d;
-  --color-accent: oklch(0.55 0.19 292);
-  --color-accent-2: oklch(0.55 0.19 292);
+  --color-accent: oklch(0.85 0.17 100);
+  --color-accent-2: oklch(0.85 0.17 100);
   --color-divider: color-mix(in srgb, #201e1d 40%, transparent);
 
   /* Tonal ramps — generated in OKLCH on one shared lightness scale, so the
@@ -21,25 +21,25 @@
   --color-neutral-800: #444141;
   --color-neutral-900: #2d2b2b;
 
-  --color-accent-100: oklch(0.96 0.015 292);
-  --color-accent-200: oklch(0.91 0.04 292);
-  --color-accent-300: oklch(0.84 0.08 292);
-  --color-accent-400: oklch(0.73 0.13 292);
-  --color-accent-500: oklch(0.55 0.19 292);
-  --color-accent-600: oklch(0.47 0.19 292);
-  --color-accent-700: oklch(0.38 0.17 292);
-  --color-accent-800: oklch(0.30 0.14 292);
-  --color-accent-900: oklch(0.22 0.10 292);
+  --color-accent-100: oklch(0.97 0.03 100);
+  --color-accent-200: oklch(0.93 0.07 100);
+  --color-accent-300: oklch(0.89 0.12 100);
+  --color-accent-400: oklch(0.86 0.15 100);
+  --color-accent-500: oklch(0.85 0.17 100);
+  --color-accent-600: oklch(0.74 0.15 100);
+  --color-accent-700: oklch(0.5 0.12 100);
+  --color-accent-800: oklch(0.38 0.09 100);
+  --color-accent-900: oklch(0.27 0.06 100);
 
-  --color-accent-2-100: oklch(0.96 0.015 292);
-  --color-accent-2-200: oklch(0.91 0.04 292);
-  --color-accent-2-300: oklch(0.84 0.08 292);
-  --color-accent-2-400: oklch(0.73 0.13 292);
-  --color-accent-2-500: oklch(0.55 0.19 292);
-  --color-accent-2-600: oklch(0.47 0.19 292);
-  --color-accent-2-700: oklch(0.38 0.17 292);
-  --color-accent-2-800: oklch(0.30 0.14 292);
-  --color-accent-2-900: oklch(0.22 0.10 292);
+  --color-accent-2-100: oklch(0.97 0.03 100);
+  --color-accent-2-200: oklch(0.93 0.07 100);
+  --color-accent-2-300: oklch(0.89 0.12 100);
+  --color-accent-2-400: oklch(0.86 0.15 100);
+  --color-accent-2-500: oklch(0.85 0.17 100);
+  --color-accent-2-600: oklch(0.74 0.15 100);
+  --color-accent-2-700: oklch(0.5 0.12 100);
+  --color-accent-2-800: oklch(0.38 0.09 100);
+  --color-accent-2-900: oklch(0.27 0.06 100);
 
   --font-heading: "Archivo", system-ui, sans-serif;
   --font-heading-weight: 800;
@@ -122,7 +122,7 @@ figcaption {
 }
 .btn svg { display: block; }
 .btn:disabled { opacity: 0.45; cursor: not-allowed; }
-.btn-primary { background: var(--color-accent); color: var(--color-bg); }
+.btn-primary { background: var(--color-accent); color: var(--color-text); }
 .btn-primary:hover { background: var(--color-accent-600); }
 .btn-primary:active { background: var(--color-accent-700); }
 .btn-secondary { border-color: var(--color-divider); }

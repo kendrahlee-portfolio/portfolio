@@ -19,7 +19,7 @@
 
   <!-- NAV -->
   <nav class="nav" style="position:sticky; top:0; z-index:50; background:var(--color-bg);">
-    <div class="nav-brand">Kendra Lee</div>
+    <img src="images/kendra-lee-logo.jpg" alt="Kendra Lee" style="height:32px; width:auto; margin-right:auto; display:block; mix-blend-mode:multiply;">
     <a href="#work">Work</a>
     <a href="#about">About</a>
     <a href="#speaking">Speaking</a>
@@ -30,8 +30,8 @@
   <header style="padding:var(--space-8) var(--space-6) var(--space-8);" data-screen-label="Hero">
     <div style="max-width:1200px; margin:0 auto;">
       <h6 style="color:var(--color-accent-700); margin-bottom:var(--space-4);">Marketing Leadership Portfolio</h6>
-      <h1 style="font-size:76px; max-width:900px; margin-bottom:var(--space-4);">Turning marketing into a growth engine.</h1>
-      <p style="font-size:19px; max-width:640px; color:color-mix(in srgb, var(--color-text) 80%, transparent); margin-bottom:var(--space-6);">I lead integrated marketing strategy that connects brand storytelling, digital growth, partnerships, and operational systems to measurable business and mission outcomes.</p>
+      <h1 style="font-size:76px; max-width:900px; margin-bottom:var(--space-4);">Turning <span style="background:linear-gradient(transparent 62%, var(--color-accent) 62%);">marketing</span> into a <span style="background:linear-gradient(transparent 62%, var(--color-accent) 62%);">growth engine</span>.</h1>
+      <p style="font-size:19px; max-width:640px; color:color-mix(in srgb, var(--color-text) 80%, transparent); margin-bottom:var(--space-6);">Hi, I'm Kendra! I lead marketing strategy that connects brand storytelling, digital growth, partnerships, and everyday operations — turning it all into a growth engine that actually moves the needle.</p>
       <div style="display:flex; gap:var(--space-3);">
         <a href="#work" class="btn btn-primary" style="padding:14px 22px; font-size:14px;">See featured work</a>
         <a href="mailto:kendrahlee@gmail.com" class="btn btn-secondary" style="padding:14px 22px; font-size:14px;">Get in touch</a>
@@ -45,10 +45,10 @@
   <section id="about" style="padding:var(--space-8) var(--space-6); max-width:1200px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:var(--space-8);" data-screen-label="About">
     <div>
       <h6 style="color:var(--color-accent-700);">About</h6>
-      <h2>Strategy first.<br/>Execution that delivers.</h2>
+      <h2>A little about<br/>how I work.</h2>
     </div>
     <div>
-      <p style="font-size:17px; color:color-mix(in srgb, var(--color-text) 85%, transparent);">My approach transforms marketing from a collection of tactics into a strategic growth engine — aligning audience insights, content ecosystems, acquisition strategies, and stakeholder engagement to strengthen visibility, increase engagement, and drive sustainable growth.</p>
+      <p style="font-size:17px; color:color-mix(in srgb, var(--color-text) 85%, transparent);">I turn marketing from a pile of scattered tactics into a real growth engine — connecting audience insights, content, and acquisition strategy into something people actually notice, and a business can measure. I love the parts other people find messy: culture-jacking a trend, wrangling ten stakeholders into one campaign, or figuring out why a number moved.</p>
       <div style="display:flex; flex-wrap:wrap; gap:var(--space-2); margin-top:var(--space-4);">
         <sc-for list="{{ brands }}" as="brand" hint-placeholder-count="7">
           <span class="tag tag-neutral">{{ brand }}</span>
@@ -66,7 +66,7 @@
     <div style="display:grid; grid-template-columns:repeat(3, 1fr);">
       <sc-for list="{{ stats }}" as="stat" hint-placeholder-count="6">
         <div style="padding:var(--space-6) var(--space-4) var(--space-6) 0; border-top:2px solid var(--color-divider);">
-          <div style="font-family:var(--font-heading); font-weight:800; font-size:48px; color:var(--color-accent); letter-spacing:-0.02em; line-height:1;">{{ stat.value }}</div>
+          <div style="display:inline-block; font-family:var(--font-heading); font-weight:800; font-size:48px; color:var(--color-text); letter-spacing:-0.02em; line-height:1; background:linear-gradient(transparent 66%, var(--color-accent) 66%);">{{ stat.value }}</div>
           <div style="font-size:14px; margin-top:var(--space-2); color:color-mix(in srgb, var(--color-text) 70%, transparent); max-width:260px;">{{ stat.label }}</div>
         </div>
       </sc-for>
@@ -118,12 +118,12 @@
               </sc-for>
             </div>
             <sc-if value="{{ c.hasLink }}" hint-placeholder-val="{{ false }}">
-              <a href="{{ c.href }}" target="_blank" rel="noopener" class="btn btn-ghost" style="margin-top:var(--space-4); padding-left:0;">Watch →</a>
+              <a href="{{ c.href }}" target="_blank" rel="noopener" style="display:inline-block; margin-top:var(--space-4); font-family:var(--font-heading); font-weight:800; font-size:13px; color:var(--color-text); text-decoration:none; background:linear-gradient(transparent 62%, var(--color-accent) 62%);">Watch →</a>
             </sc-if>
             <sc-if value="{{ c.hasLinks }}" hint-placeholder-val="{{ false }}">
-              <div style="display:flex; gap:var(--space-4); margin-top:var(--space-4);">
+              <div style="display:flex; gap:48px; flex-wrap:wrap; margin-top:var(--space-4);">
                 <sc-for list="{{ c.links }}" as="lnk" hint-placeholder-count="2">
-                  <a href="{{ lnk.href }}" target="_blank" rel="noopener" class="btn btn-ghost" style="padding-left:0;">{{ lnk.label }}</a>
+                  <a href="{{ lnk.href }}" target="_blank" rel="noopener" style="display:inline-block; font-family:var(--font-heading); font-weight:800; font-size:13px; color:var(--color-text); text-decoration:none; background:linear-gradient(transparent 62%, var(--color-accent) 62%);">{{ lnk.label }}</a>
                 </sc-for>
               </div>
             </sc-if>
@@ -138,13 +138,17 @@
 
   <!-- DISTRICT OF VIDA -->
   <section style="padding:var(--space-8) var(--space-6); max-width:1200px; margin:0 auto;" data-screen-label="District of VIDA">
-    <span class="tag tag-accent" style="margin-bottom:var(--space-3);">Cross-Brand Strategy</span>
-    <h2 style="margin-top:var(--space-3); margin-bottom:var(--space-3);">District of VIDA</h2>
-    <p style="font-size:19px; max-width:640px; color:color-mix(in srgb, var(--color-text) 85%, transparent); margin-bottom:var(--space-2);">Turning seven standalone brands into one ecosystem members actually want to explore.</p>
-    <p style="font-size:16px; max-width:700px; color:color-mix(in srgb, var(--color-text) 75%, transparent); margin-bottom:var(--space-6);">Built the strategic framework connecting VIDA Fitness, Aura Spa, Bang Salon, VIDA Pilates, SweatBox, Bar VIDA, and Penthouse Pool &amp; Lounge into a single cross-brand experience — designed to increase engagement, drive multi-brand usage, and turn one-service members into full-ecosystem members.</p>
-    <figure style="margin:0; background:var(--color-surface); border:1px solid var(--color-divider);">
-      <img src="images/district-of-vida.png" style="width:100%; height:auto; display:block;">
-    </figure>
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:var(--space-8); align-items:center;">
+      <figure style="margin:0; aspect-ratio:4/3; background:var(--color-surface); border:1px solid var(--color-divider); overflow:hidden; display:flex; align-items:center; justify-content:center;">
+        <img src="images/district-of-vida.png" style="width:100%; height:100%; object-fit:contain; display:block;">
+      </figure>
+      <div>
+        <span class="tag tag-accent" style="margin-bottom:var(--space-3);">Cross-Brand Strategy</span>
+        <h2 style="margin-top:var(--space-3); margin-bottom:var(--space-3);">District of VIDA</h2>
+        <p style="font-size:19px; color:color-mix(in srgb, var(--color-text) 85%, transparent); margin-bottom:var(--space-2);">Turning seven standalone brands into one ecosystem members actually want to explore.</p>
+        <p style="font-size:16px; color:color-mix(in srgb, var(--color-text) 75%, transparent);">Built the strategic framework connecting VIDA Fitness, Aura spa, Bang Salon, VIDA Pilates, SweatBox, Bar VIDA, and Penthouse Pool &amp; Lounge into a single cross-brand experience — designed to increase engagement, drive multi-brand usage, and turn one-service members into full-ecosystem members.</p>
+      </div>
+    </div>
   </section>
 
   <hr class="hr" style="margin:0;">
@@ -156,7 +160,7 @@
     <div style="display:grid; grid-template-columns:1fr 1fr;">
       <sc-for list="{{ moreWork }}" as="m" hint-placeholder-count="8">
         <a href="{{ m.href }}" class="card" style="border-top:2px solid var(--color-divider); border-radius:0; background:transparent; padding:var(--space-4) var(--space-4) var(--space-4) 0; text-decoration:none; color:inherit;" style-hover="background:color-mix(in srgb, var(--color-text) 4%, transparent);">
-          <div class="card-title">{{ m.title }}</div>
+          <div class="card-title" style="display:inline-block; background:linear-gradient(transparent 66%, var(--color-accent) 66%);">{{ m.title }}</div>
           <div class="card-body" style="opacity:1; color:color-mix(in srgb, var(--color-text) 65%, transparent);">{{ m.tag }}</div>
         </a>
       </sc-for>
@@ -174,8 +178,8 @@
         <tr>
           <td style="width:140px; font-weight:600; color:color-mix(in srgb, var(--color-text) 65%, transparent);">{{ s.when }}</td>
           <td>
-            <a href="{{ s.href }}" style="text-decoration:none; color:inherit;" style-hover="color:var(--color-accent-700);">
-              <div style="font-weight:600; font-size:16px;">{{ s.role }}</div>
+            <a href="{{ s.href }}" style="text-decoration:none; color:inherit;">
+              <div style="display:inline-block; font-weight:600; font-size:16px; background:linear-gradient(transparent 66%, var(--color-accent) 66%);">{{ s.role }}</div>
             </a>
             <div style="font-size:14px; color:color-mix(in srgb, var(--color-text) 70%, transparent); margin-top:2px;">{{ s.topic }}</div>
           </td>
@@ -185,16 +189,17 @@
   </section>
 
   <!-- CONTACT — closing banner: the one field of solid red, per system direction -->
-  <footer id="contact" style="padding:var(--space-8) var(--space-6); background:var(--color-accent); color:var(--color-bg); text-align:left;" data-screen-label="Contact">
+  <footer id="contact" style="padding:var(--space-8) var(--space-6); background:var(--color-accent); color:var(--color-text); text-align:left;" data-screen-label="Contact">
     <div style="max-width:1200px; margin:0 auto;">
       <h2 style="max-width:640px; margin-bottom:var(--space-4);">Let's work together.</h2>
-      <p style="font-size:18px; max-width:560px; color:color-mix(in srgb, var(--color-bg) 90%, transparent); margin-bottom:var(--space-6);">Open to marketing leadership roles where strategy, storytelling, and measurable growth meet.</p>
+      <p style="font-size:18px; max-width:560px; color:color-mix(in srgb, var(--color-text) 85%, transparent); margin-bottom:var(--space-6);">Open to marketing leadership roles where strategy, storytelling, and measurable growth meet.</p>
       <div style="display:flex; gap:var(--space-3); flex-wrap:wrap; margin-bottom:var(--space-8);">
-        <a href="mailto:kendrahlee@gmail.com" class="btn" style="background:var(--color-bg); color:var(--color-accent); padding:14px 22px; font-size:14px;">kendrahlee@gmail.com</a>
-        <a href="tel:4153179774" class="btn" style="border:1px solid var(--color-bg); color:var(--color-bg); padding:14px 22px; font-size:14px;">415.317.9774</a>
-        <a href="https://linkedin.com/in/kendrahlee" class="btn" style="border:1px solid var(--color-bg); color:var(--color-bg); padding:14px 22px; font-size:14px;">LinkedIn</a>
+        <a href="mailto:kendrahlee@gmail.com" class="btn" style="background:var(--color-text); color:var(--color-accent); padding:14px 22px; font-size:14px;">kendrahlee@gmail.com</a>
+        <a href="tel:4153179774" class="btn" style="border:1px solid var(--color-text); color:var(--color-text); padding:14px 22px; font-size:14px;">415.317.9774</a>
+        <a href="https://linkedin.com/in/kendrahlee" class="btn" style="border:1px solid var(--color-text); color:var(--color-text); padding:14px 22px; font-size:14px;">LinkedIn</a>
       </div>
-      <div style="font-size:12px; color:color-mix(in srgb, var(--color-bg) 75%, transparent);">© 2026 Kendra Lee</div>
+      <div style="font-size:13px; color:color-mix(in srgb, var(--color-text) 80%, transparent); margin-bottom:var(--space-3);">Outside of my day-to-day, I run <a href="https://social-lee.com" target="_blank" rel="noopener" style="color:var(--color-text); text-decoration:underline;">Social-Lee</a>, my own social media consulting practice.</div>
+      <div style="font-size:12px; color:color-mix(in srgb, var(--color-text) 65%, transparent);">© 2026 Kendra Lee</div>
     </div>
   </footer>
 
@@ -300,7 +305,7 @@ class Component extends DCLogic {
     }));
 
     return {
-      brands: ['VIDA Fitness', 'Aura Spa & Bang Salon', 'Penthouse Pool Club', 'SweatBox', 'VIDA Pilates', 'Urban Adventures Companies', 'Take Me Fishing (RBFF)'],
+      brands: ['VIDA Fitness', 'Aura spa & Bang Salon', 'Penthouse Pool Club', 'SweatBox', 'VIDA Pilates', 'Urban Adventures Companies', 'Take Me Fishing (RBFF)'],
       stats: [
         { value: '283%', label: 'YoY increase in paid-driven signup volume' },
         { value: '57%', label: 'Reduction in blended cost per acquisition (CPA)' },
@@ -311,9 +316,9 @@ class Component extends DCLogic {
       ],
       campaigns,
       moreWork: [
-        { title: 'Pride & WorldPride Activations', tag: '2022\u20132025 — Event Production, incl. WorldPride Parade floats', href: 'https://youtu.be/lzf_jKWfdEY' },
         { title: 'VIDA Thrive 5K', tag: '2022\u20132024 — Annual charity running event series', href: 'https://www.youtube.com/playlist?list=PLlGe1bG5ZoFIG7idiqllqAele6MY_TiuT' },
         { title: 'Inside a VIDA Group Fitness Class', tag: 'Video series — member education & barrier reduction', href: 'https://www.youtube.com/playlist?list=PLlGe1bG5ZoFIBrqd1O25dywACdXBx_yDe' },
+        { title: 'Nutrition Services at VIDA', tag: 'Video series — member education about nutrition offerings', href: 'https://youtube.com/playlist?list=PLlGe1bG5ZoFLxI8hgp5NNKaBwGpiawTIp&si=qmStK00_-OrJrhE-' },
         { title: 'Wellness Series at Aura spa', tag: 'Educational content — luxury wellness brand', href: 'https://www.youtube.com/playlist?list=PLlGe1bG5ZoFJMTBOZrqkqJgE6EkBMlA5D' },
         { title: 'VIDA Trainer Tips', tag: 'Ongoing video series — trainer expert positioning', href: 'https://www.youtube.com/playlist?list=PLlGe1bG5ZoFKyBPJ02Pttc4zl6oQNJOT8' },
         { title: 'VIDA Pilates: Inside the Studio', tag: 'Brand storytelling — Classical Pilates awareness', href: 'https://youtube.com/playlist?list=PLlGe1bG5ZoFJZPtvNXZo1h60Mo8hMe8HN&si=qkItxuERbWIJ2B72' },
