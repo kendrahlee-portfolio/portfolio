@@ -12,29 +12,34 @@
   <style>
     body { margin: 0; }
     ::selection { background: color-mix(in srgb, var(--color-accent) 30%, transparent); }
+    a { color: var(--color-text); text-decoration: underline; text-decoration-color: var(--color-accent); text-decoration-thickness: 3px; text-underline-offset: 3px; }
+    a:hover { color: var(--color-accent-700); text-decoration-color: var(--color-accent-700); }
   </style>
 </helmet>
 
-<div style="width:100%; max-width:100%; overflow-x:hidden; background:var(--color-bg); color:var(--color-text); font-family:var(--font-body);">
+<div id="top" style="width:100%; max-width:100%; overflow-x:hidden; background:var(--color-bg); color:var(--color-text); font-family:var(--font-body);">
 
   <!-- NAV -->
   <nav class="nav" style="position:sticky; top:0; z-index:50; background:var(--color-bg);">
-    <img src="images/kendra-lee-logo.jpg" alt="Kendra Lee" style="height:42px; width:auto; margin-right:auto; display:block;">
-    <a href="#work">Work</a>
+    <img src="images/kendra-lee-logo-transparent.png" alt="Kendra Lee" style="height:42px; width:auto; margin-right:auto; display:block;">
+    <a href="#top">Home</a>
     <a href="#about">About</a>
+    <a href="#work">Strategic Marketing Leadership</a>
     <a href="#speaking">Speaking</a>
-    <a href="#contact" class="btn btn-secondary" style="margin-left:var(--space-2);">Contact</a>
+    <a href="Kendra_Lee_Resume.pdf" target="_blank" rel="noopener" class="btn btn-primary" style="margin-left:var(--space-2);">Resume</a>
+    <a href="#contact" class="btn btn-secondary">Contact</a>
   </nav>
 
   <!-- HERO -->
   <header style="padding:var(--space-8) var(--space-6) var(--space-8);" data-screen-label="Hero">
     <div style="max-width:1200px; margin:0 auto;">
       <h6 style="color:var(--color-accent-700); margin-bottom:var(--space-4);">Marketing Leadership Portfolio</h6>
-      <h1 style="font-size:76px; max-width:900px; margin-bottom:var(--space-4);">Turning <span style="background:linear-gradient(transparent 62%, var(--color-accent) 62%);">marketing</span> into a <span style="background:linear-gradient(transparent 62%, var(--color-accent) 62%);">growth engine</span>.</h1>
-      <p style="font-size:19px; max-width:640px; color:color-mix(in srgb, var(--color-text) 80%, transparent); margin-bottom:var(--space-6);">Hi, I'm Kendra! I lead marketing strategy that connects brand storytelling, digital growth, partnerships, and everyday operations — turning it all into a growth engine that actually moves the needle.</p>
-      <div style="display:flex; gap:var(--space-3);">
-        <a href="#work" class="btn btn-primary" style="padding:14px 22px; font-size:14px;">See featured work</a>
-        <a href="mailto:kendrahlee@gmail.com" class="btn btn-secondary" style="padding:14px 22px; font-size:14px;">Get in touch</a>
+      <h1 style="font-size:68px; max-width:900px; margin-bottom:var(--space-4);">Connecting <span style="background:linear-gradient(transparent 62%, var(--color-accent) 62%);">brand</span>, <span style="background:linear-gradient(transparent 62%, var(--color-accent) 62%);">performance</span>, and <span style="background:linear-gradient(transparent 62%, var(--color-accent) 62%);">community</span> into <span style="background:linear-gradient(transparent 62%, var(--color-accent) 62%);">measurable growth</span>.</h1>
+      <p style="font-size:19px; max-width:640px; color:color-mix(in srgb, var(--color-text) 80%, transparent); margin-bottom:var(--space-6);">Hi, I'm Kendra! 👋 I build marketing strategies that connect brand storytelling, digital growth, partnerships, and operations into one cohesive system that drives measurable business results. I love finding the intersection between creative ideas and smart strategy — and turning those ideas into growth people can actually see.</p>
+      <div style="display:flex; gap:var(--space-3); flex-wrap:wrap;">
+        <a href="#work" class="btn btn-primary" style="padding:14px 22px; font-size:14px;">See Featured Work</a>
+        <a href="mailto:kendrahlee@gmail.com" class="btn btn-secondary" style="padding:14px 22px; font-size:14px;">Get in Touch</a>
+        <a href="Kendra_Lee_Resume.pdf" target="_blank" rel="noopener" class="btn btn-secondary" style="padding:14px 22px; font-size:14px;">View Resume</a>
       </div>
     </div>
   </header>
@@ -45,15 +50,32 @@
   <section id="about" style="padding:var(--space-8) var(--space-6); max-width:1200px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:var(--space-8);" data-screen-label="About">
     <div>
       <h6 style="color:var(--color-accent-700);">About</h6>
-      <h2>A little about<br/>how I work.</h2>
+      <h2>How I think<br/>about marketing.</h2>
     </div>
     <div>
-      <p style="font-size:17px; color:color-mix(in srgb, var(--color-text) 85%, transparent);">I turn marketing from a pile of scattered tactics into a real growth engine — connecting audience insights, content, and acquisition strategy into something people actually notice, and a business can measure. I love the parts other people find messy: culture-jacking a trend, wrangling ten stakeholders into one campaign, or figuring out why a number moved.</p>
+      <p style="font-size:17px; color:color-mix(in srgb, var(--color-text) 85%, transparent);">Great marketing rarely happens in silos. I enjoy connecting the dots — bringing together brand, performance marketing, partnerships, operations, and customer experience so they work as one system instead of separate projects. Whether that means launching a campaign, leading a cross-functional initiative, or figuring out why performance shifted, I'm happiest solving complex problems alongside great people. I lean on data to guide the decisions, but I never lose sight of the story — or the people — behind the numbers.</p>
+      <p style="font-size:15px; color:color-mix(in srgb, var(--color-text) 65%, transparent); margin-top:var(--space-4);">My marketing leadership spans Urban Adventures Companies and the Recreational Boating &amp; Fishing Foundation (RBFF) — across fitness, wellness, hospitality, lifestyle brands, and national nonprofit marketing.</p>
       <div style="display:flex; flex-wrap:wrap; gap:var(--space-2); margin-top:var(--space-4);">
         <sc-for list="{{ brands }}" as="brand" hint-placeholder-count="7">
           <span class="tag tag-neutral">{{ brand }}</span>
         </sc-for>
       </div>
+    </div>
+  </section>
+
+  <hr class="hr" style="margin:0;">
+
+  <!-- MY APPROACH -->
+  <section style="padding:var(--space-8) var(--space-6); max-width:1200px; margin:0 auto;" data-screen-label="My Approach">
+    <h6 style="color:var(--color-accent-700);">My Approach</h6>
+    <h2 style="margin-bottom:var(--space-6);">Four things I keep connected</h2>
+    <div style="display:grid; grid-template-columns:repeat(4, 1fr); gap:var(--space-4);">
+      <sc-for list="{{ approach }}" as="a" hint-placeholder-count="4">
+        <div class="card" style="border-top:2px solid var(--color-divider); border-radius:0; background:transparent; padding:var(--space-4) var(--space-4) 0 0;">
+          <div class="card-title" style="font-size:20px;">{{ a.title }}</div>
+          <p class="card-body" style="opacity:1; color:color-mix(in srgb, var(--color-text) 75%, transparent); font-size:15px;">{{ a.body }}</p>
+        </div>
+      </sc-for>
     </div>
   </section>
 
@@ -78,8 +100,8 @@
   <!-- FEATURED WORK -->
   <section id="work" style="padding:var(--space-8) var(--space-6) var(--space-6); max-width:1200px; margin:0 auto;" data-screen-label="Featured Work">
     <div style="margin-bottom:var(--space-8);">
-      <h6 style="color:var(--color-accent-700);">Featured Work</h6>
-      <h2>Flagship campaigns &amp; events</h2>
+      <h6 style="color:var(--color-accent-700);">Strategic Marketing Leadership</h6>
+      <h2>Campaigns &amp; experiences that moved the needle</h2>
     </div>
 
     <sc-for list="{{ campaigns }}" as="c" hint-placeholder-count="5">
@@ -95,10 +117,10 @@
               </sc-if>
             </figure>
             <sc-if value="{{ c.hasExtra }}" hint-placeholder-val="{{ false }}">
-              <div style="display:grid; grid-template-columns:1fr 1fr; gap:var(--space-2); margin-top:var(--space-2);">
+              <div style="display:flex; gap:var(--space-2); margin-top:var(--space-2);">
                 <sc-for list="{{ c.extraImages }}" as="img" hint-placeholder-count="2">
-                  <figure style="aspect-ratio:1/1; margin:0; overflow:hidden;">
-                    <img src="{{ img }}" style="width:100%; height:100%; object-fit:cover; display:block;">
+                  <figure style="width:140px; aspect-ratio:1/1; margin:0; overflow:hidden; flex:none;">
+                    <img src="{{ img }}" style="width:100%; height:100%; object-fit:cover; object-position:top; display:block;">
                   </figure>
                 </sc-for>
               </div>
@@ -113,7 +135,7 @@
               <sc-for list="{{ c.impact }}" as="point" hint-placeholder-count="3">
                 <div style="display:flex; gap:var(--space-2); font-size:14px; color:var(--color-text);">
                   <span style="color:var(--color-accent); font-weight:800;">—</span>
-                  <span>{{ point.text }}<sc-if value="{{ point.hasHref }}" hint-placeholder-val="{{ false }}"> <a href="{{ point.href }}" target="_blank" rel="noopener">↗</a></sc-if></span>
+                  <span>{{ point.text }}<sc-for list="{{ point.links }}" as="pl" hint-placeholder-count="0"> <a href="{{ pl.href }}" target="_blank" rel="noopener" style="font-weight:800; text-decoration-thickness:2px;">↗</a></sc-for></span>
                 </div>
               </sc-for>
             </div>
@@ -160,7 +182,10 @@
     <div style="display:grid; grid-template-columns:1fr 1fr;">
       <sc-for list="{{ moreWork }}" as="m" hint-placeholder-count="8">
         <a href="{{ m.href }}" class="card" style="border-top:2px solid var(--color-divider); border-radius:0; background:transparent; padding:var(--space-4) var(--space-4) var(--space-4) 0; text-decoration:none; color:inherit;" style-hover="background:color-mix(in srgb, var(--color-text) 4%, transparent);">
-          <div class="card-title" style="display:inline-block; align-self:flex-start; width:fit-content; background:linear-gradient(transparent 66%, var(--color-accent) 66%);">{{ m.title }}</div>
+          <div style="display:flex; align-items:baseline; gap:var(--space-2);">
+            <div class="card-title" style="display:inline-block; align-self:flex-start; width:fit-content; background:linear-gradient(transparent 66%, var(--color-accent) 66%);">{{ m.title }}</div>
+            <span style="font-weight:800; color:var(--color-text);">→</span>
+          </div>
           <div class="card-body" style="opacity:1; color:color-mix(in srgb, var(--color-text) 65%, transparent);">{{ m.tag }}</div>
         </a>
       </sc-for>
@@ -178,8 +203,9 @@
         <tr>
           <td style="width:140px; font-weight:600; color:color-mix(in srgb, var(--color-text) 65%, transparent);">{{ s.when }}</td>
           <td>
-            <a href="{{ s.href }}" style="text-decoration:none; color:inherit;">
+            <a href="{{ s.href }}" style="text-decoration:none; color:inherit; display:flex; align-items:baseline; gap:var(--space-2);">
               <div style="display:inline-block; font-weight:600; font-size:16px; background:linear-gradient(transparent 66%, var(--color-accent) 66%);">{{ s.role }}</div>
+              <span style="font-weight:800; color:var(--color-text);">→</span>
             </a>
             <div style="font-size:14px; color:color-mix(in srgb, var(--color-text) 70%, transparent); margin-top:2px;">{{ s.topic }}</div>
           </td>
@@ -188,17 +214,30 @@
     </table>
   </section>
 
+  <!-- LEADERSHIP PHILOSOPHY -->
+  <section style="padding:var(--space-8) var(--space-6); max-width:1200px; margin:0 auto;" data-screen-label="Leadership Philosophy">
+    <h6 style="color:var(--color-accent-700);">Leadership Philosophy</h6>
+    <h2 style="margin-bottom:var(--space-4); max-width:760px;">Connected marketing is stronger marketing</h2>
+    <p style="font-size:18px; max-width:700px; color:color-mix(in srgb, var(--color-text) 85%, transparent);">I believe the best marketing happens when brand, operations, customer experience, and performance aren't treated as separate functions. When they're connected, organizations grow faster, teams work better together, and customers notice the difference. That's the kind of marketing I enjoy building.</p>
+  </section>
+
+  <hr class="hr" style="margin:0;">
+
+  <!-- BEYOND MY DAY JOB -->
+  <section style="padding:var(--space-6) var(--space-6) var(--space-8); max-width:1200px; margin:0 auto;" data-screen-label="Beyond My Day Job">
+    <h6 style="color:var(--color-accent-700);">Beyond My Day Job</h6>
+    <p style="font-size:16px; max-width:700px; color:color-mix(in srgb, var(--color-text) 75%, transparent); margin-top:var(--space-2);">I also run <a href="https://social-lee.com" target="_blank" rel="noopener" style="text-decoration:none; color:var(--color-text); background:linear-gradient(transparent 66%, var(--color-accent) 66%); font-weight:600;">social-lee.com</a>, a boutique social media consulting practice where I help small businesses with content strategy, trend-driven content, video editing/content creation, and social media growth. It's where I get to work directly with brands end-to-end — strategy through execution — and stay sharp on what's actually working on the platforms right now.</p>
+  </section>
+
   <!-- CONTACT — closing banner: the one field of solid red, per system direction -->
   <footer id="contact" style="padding:var(--space-8) var(--space-6); background:var(--color-accent); color:var(--color-text); text-align:left;" data-screen-label="Contact">
     <div style="max-width:1200px; margin:0 auto;">
-      <h2 style="max-width:640px; margin-bottom:var(--space-4);">Let's work together.</h2>
-      <p style="font-size:18px; max-width:560px; color:color-mix(in srgb, var(--color-text) 85%, transparent); margin-bottom:var(--space-6);">Open to marketing leadership roles where strategy, storytelling, and measurable growth meet.</p>
-      <div style="display:flex; gap:var(--space-3); flex-wrap:wrap; margin-bottom:var(--space-8);">
+      <h2 style="max-width:680px; margin-bottom:var(--space-4);">Looking for a marketing leader who connects strategy, creativity, and measurable growth? Let's talk.</h2>
+      <div style="display:flex; gap:var(--space-3); flex-wrap:wrap; margin-bottom:var(--space-6);">
         <a href="mailto:kendrahlee@gmail.com" class="btn" style="background:var(--color-text); color:var(--color-accent); padding:14px 22px; font-size:14px;">kendrahlee@gmail.com</a>
         <a href="tel:4153179774" class="btn" style="border:1px solid var(--color-text); color:var(--color-text); padding:14px 22px; font-size:14px;">415.317.9774</a>
         <a href="https://linkedin.com/in/kendrahlee" class="btn" style="border:1px solid var(--color-text); color:var(--color-text); padding:14px 22px; font-size:14px;">LinkedIn</a>
       </div>
-      <div style="font-size:13px; color:color-mix(in srgb, var(--color-text) 80%, transparent); margin-bottom:var(--space-3);">Outside of my day-to-day, I run <a href="https://social-lee.com" target="_blank" rel="noopener" style="color:var(--color-text); text-decoration:underline;">Social-Lee</a>, my own social media consulting practice.</div>
       <div style="font-size:12px; color:color-mix(in srgb, var(--color-text) 65%, transparent);">© 2026 Kendra Lee</div>
     </div>
   </footer>
@@ -217,6 +256,7 @@ class Component extends DCLogic {
         body: 'Led strategy, creative direction, and execution of Penthouse Pool Club\u2019s 2026 summer campaign, repositioning the brand as one of Washington, DC\u2019s premier rooftop destinations through a social-first, full-funnel approach — from teaser content through experiential events and urgency-driven membership pushes.',
         impact: [
           { text: 'Named #1 Spot in Fox 5\u2019s Zip Trip to Navy Yard 5 Must Stops', href: 'https://www.fox5dc.com/video/fmc-j2jhd5q2mvgc7pz0' },
+          { text: 'Managed influencer partnerships and on-site collaborations that generated authentic, buzzworthy content' },
           { text: 'Top creative achieved a 4.6% CTR at $0.35 CPC' },
           { text: 'Multiple campaigns sustained 2\u20134%+ CTR with CPCs under $0.70 at scale' },
         ],
@@ -235,8 +275,9 @@ class Component extends DCLogic {
         impact: [
           { text: 'Directed integrated Pride programming across VIDA Fitness and Penthouse Pool Club every year since 2022' },
           { text: 'Produced the annual fundraising silent auction end-to-end, securing partnerships with IMP and Live Nation', href: 'https://www.32auctions.com/VIDAHasPride2026' },
-          { text: 'Managed two branded floats in the 2025 WorldPride Parade, plus floats in Pride Parades 2022\u20132024', href: 'https://www.youtube.com/watch?v=1O6z_cEoTDY&list=LL' },
-          { text: 'Conceived Night of Pride, a signature fundraiser that earned local TV coverage on WUSA9' },
+          { text: 'Managed two branded floats in the 2025 WorldPride Parade, plus floats in Pride Parades 2022\u20132024' },
+          { text: 'Coordinated influencer and community partnerships to extend reach across the LGBTQ+ community' },
+          { text: 'Conceived Night of Pride, a signature fundraiser that earned local TV coverage on WUSA9', links: [{ href: 'https://www.youtube.com/watch?v=1O6z_cEoTDY&list=LL' }, { href: 'https://www.instagram.com/reel/DJ7S33SP07u/' }] },
         ],
         placeholder: 'event photography',
         image: 'images/pride-main.jpg',
@@ -249,10 +290,11 @@ class Component extends DCLogic {
         tag: 'Full-Funnel Marketing',
         title: '\u201cFeel Something\u201d Campaign',
         role: 'January 2026 — VIDA Fitness',
-        body: 'Managed and executed a January brand-reset campaign that shifted VIDA away from traditional New Year urgency toward emotional reconnection — spanning paid social, UGC, an interactive quiz, a referral engine, and an open house activation, reinforced in-club through screens and instructor content.',
+        body: 'Managed and executed a January brand-reset campaign that shifted VIDA away from traditional New Year urgency toward emotional reconnection, utilizing a social-first strategy spanning paid social, a referral engine, and an open house activation, reinforced in-club through screens and instructor content.',
         impact: [
-          { text: 'Built a \u201cCheck Your Spark\u201d quiz to drive segmented landing page traffic' },
-          { text: 'Scaled high-performing organic creative into paid media' },
+          { text: 'Scaled the \u201cCheck Your Spark\u201d interactive quiz on paid social to drive segmented landing page traffic' },
+          { text: 'Directed creator and influencer management for organic, UGC-driven creative, then scaled top performers into paid media' },
+          { text: 'Quiz carousel drove a 5.6% CTR, 96 submitted applications ($51.63 CPA), and 86 completed registrations ($57.63 CPA)' },
           { text: 'Extended into retention via themed content pillars (Feel Strong, Feel Zen, Feel Energized)' },
         ],
         placeholder: 'campaign creative',
@@ -268,6 +310,7 @@ class Component extends DCLogic {
         role: 'September 2025 — VIDA Fitness',
         body: 'Orchestrated VIDA\u2019s first annual member appreciation event, managing end-to-end execution — creative concept, team management, member communications, and on-site activations across six locations to strengthen community bonds and showcase brand culture.',
         impact: [
+          { text: 'Partnered with a creator and internal team members to produce a video series encouraging voting and participation' },
           { text: 'Generated 100+ new memberships and 150 leads' },
           { text: '560 member votes across six locations' },
           { text: 'Paid social strategy delivered a 4:1 ROI' },
@@ -283,6 +326,7 @@ class Component extends DCLogic {
         body: 'Conceived and executed a trend-driven fashion event leveraging the \u201cbrat summer\u201d cultural moment, in partnership with the Washington Metropolitan Area Transit Authority — full production from venue and talent to cross-promotional marketing across VIDA and partner channels.',
         impact: [
           { text: 'Negotiated and managed a first-of-its-kind transit authority partnership' },
+          { text: 'Booked and managed talent and influencer partnerships for the show and content rollout' },
           { text: 'Merged fitness, fashion, and pop culture into one activation' },
           { text: 'Positioned VIDA as a culturally relevant lifestyle brand' },
         ],
@@ -301,11 +345,17 @@ class Component extends DCLogic {
       hasLink: !!c.href,
       hasLinks: !!(c.links && c.links.length),
       links: c.links || [],
-      impact: c.impact.map((p) => ({ ...p, hasHref: !!p.href })),
+      impact: c.impact.map((p) => ({ ...p, links: p.links || (p.href ? [{ href: p.href }] : []) })),
     }));
 
     return {
       brands: ['VIDA Fitness', 'Aura spa & Bang Salon', 'Penthouse Pool Club', 'SweatBox', 'VIDA Pilates', 'Urban Adventures Companies', 'Take Me Fishing (RBFF)'],
+      approach: [
+        { title: 'Brand 🎨', body: 'Build brands people remember, trust, and genuinely want to be part of.' },
+        { title: 'Performance 📈', body: 'Turn creative ideas into measurable growth through thoughtful strategy, testing, and optimization.' },
+        { title: 'Community 🤝', body: 'Strengthen relationships through partnerships, experiences, and authentic engagement that creates lasting loyalty.' },
+        { title: 'Operations ⚙️', body: 'Build scalable marketing systems that align teams, improve execution, and support long-term business growth.' },
+      ],
       stats: [
         { value: '283%', label: 'YoY increase in paid-driven signup volume' },
         { value: '57%', label: 'Reduction in blended cost per acquisition (CPA)' },
@@ -323,7 +373,7 @@ class Component extends DCLogic {
         { title: 'VIDA Trainer Tips', tag: 'Ongoing video series — trainer expert positioning', href: 'https://www.youtube.com/playlist?list=PLlGe1bG5ZoFKyBPJ02Pttc4zl6oQNJOT8' },
         { title: 'VIDA Pilates: Inside the Studio', tag: 'Brand storytelling — Classical Pilates awareness', href: 'https://youtube.com/playlist?list=PLlGe1bG5ZoFJZPtvNXZo1h60Mo8hMe8HN&si=qkItxuERbWIJ2B72' },
         { title: 'October Om', tag: '2024 — Monthly yoga content series', href: 'https://youtu.be/0Z6cEs8-YSY?si=M7viZpEaivQ9yCtA' },
-        { title: 'Take Me Fishing (RBFF)', tag: 'Social strategy, Disney partnership, and national campaigns', href: 'https://takemefishing.org/' },
+        { title: 'Take Me Fishing (RBFF)', tag: 'National nonprofit marketing for the Recreational Boating & Fishing Foundation \u2014 social strategy, a Disney partnership, influencer collaborations, and nationwide campaigns supporting conservation, outdoor recreation, and large-scale audience engagement', href: 'https://takemefishing.org/' },
       ],
       speaking: [
         { when: 'Mar 2026', role: 'Health & Fitness Association Conference & Expo — Speaker', topic: 'Make Your Social Media Build More Than Just Muscle', href: 'https://hub.healthandfitness.org/hfa-show-speaker-kendra-lee' },
