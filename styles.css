@@ -231,6 +231,72 @@ textarea.input { min-height: 90px; resize: vertical; }
 }
 .table tbody tr:hover { background: color-mix(in srgb, var(--color-text) 4%, transparent); }
 
+/* ══════════════════════════════════════════════════════════════════════════
+   Responsive breakpoints — mobile/tablet overrides for the portfolio page.
+   Uses !important because the page is built with inline styles per element;
+   these rules only kick in at narrow viewports.
+   ══════════════════════════════════════════════════════════════════════ */
+
+@media (max-width: 900px) {
+  [data-screen-label="My Approach"] > div,
+  [data-screen-label="Growth Highlights"] > div {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  [data-screen-label="Hero"] h1 { font-size: 48px !important; }
+}
+
+@media (max-width: 640px) {
+  /* Nav */
+  .nav {
+    flex-wrap: wrap;
+    row-gap: var(--space-2);
+    padding: var(--space-2) var(--space-4) !important;
+  }
+  .nav a:not(.btn) { font-size: 13px; }
+  .nav img { height: 32px !important; }
+  .nav .btn { padding: 8px 14px !important; font-size: 12px !important; }
+
+  /* Generic section padding */
+  header, section, footer { padding-left: var(--space-4) !important; padding-right: var(--space-4) !important; }
+
+  /* Hero */
+  [data-screen-label="Hero"] h1 { font-size: 32px !important; line-height: 1.15 !important; }
+  [data-screen-label="Hero"] p { font-size: 16px !important; }
+  .hero-actions { flex-direction: column; align-items: stretch; }
+  .hero-actions .btn { width: 100%; text-align: center; }
+
+  /* Two-column sections stack */
+  #about,
+  [data-screen-label="My Approach"] > div,
+  [data-screen-label="Growth Highlights"] > div,
+  [data-screen-label="District of VIDA"] > div,
+  [data-screen-label="More Work"] > div,
+  .campaign-grid {
+    grid-template-columns: 1fr !important;
+  }
+  [data-screen-label="District of VIDA"] > div,
+  .campaign-grid { gap: var(--space-4) !important; }
+
+  h1 { font-size: 32px !important; }
+  h2 { font-size: 26px !important; }
+  h3 { font-size: 21px !important; }
+
+  .extra-images figure { width: 90px !important; }
+  .link-row { gap: 20px !important; }
+
+  /* Speaking table -> stacked rows */
+  .table, .table tbody, .table tr, .table td { display: block; width: 100%; }
+  .table tr { border-bottom: 1px solid var(--color-divider); padding-bottom: var(--space-3); margin-bottom: var(--space-3); }
+  .table td { border-bottom: none !important; padding: 2px 0 !important; }
+  .table td:first-child { width: auto !important; opacity: 0.7; }
+
+  /* Contact footer heading */
+  footer h2 { font-size: 26px !important; }
+
+  /* Buttons: comfortable tap targets */
+  .btn { min-height: 40px; }
+}
+
 /* — dialog — */
 .dialog-backdrop {
   position: fixed; inset: 0; display: grid; place-items: center;
