@@ -19,7 +19,7 @@
 
   <!-- NAV -->
   <nav class="nav" style="position:sticky; top:0; z-index:50; background:var(--color-bg);">
-    <img src="images/kendra-lee-logo.jpg" alt="Kendra Lee" style="height:32px; width:auto; margin-right:auto; display:block; mix-blend-mode:multiply;">
+    <img src="images/kendra-lee-logo.jpg" alt="Kendra Lee" style="height:42px; width:auto; margin-right:auto; display:block;">
     <a href="#work">Work</a>
     <a href="#about">About</a>
     <a href="#speaking">Speaking</a>
@@ -155,12 +155,12 @@
 
   <!-- MORE WORK -->
   <section style="padding:var(--space-6) var(--space-6) var(--space-8); max-width:1200px; margin:0 auto;" data-screen-label="More Work">
-    <h6 style="color:var(--color-accent-700);">More Work</h6>
-    <h2 style="margin-bottom:var(--space-6);">Ongoing series &amp; additional programs</h2>
+    <h6 style="color:var(--color-accent-700);">Additional Work</h6>
+    <h2 style="margin-bottom:var(--space-6);">Series &amp; Campaigns</h2>
     <div style="display:grid; grid-template-columns:1fr 1fr;">
       <sc-for list="{{ moreWork }}" as="m" hint-placeholder-count="8">
         <a href="{{ m.href }}" class="card" style="border-top:2px solid var(--color-divider); border-radius:0; background:transparent; padding:var(--space-4) var(--space-4) var(--space-4) 0; text-decoration:none; color:inherit;" style-hover="background:color-mix(in srgb, var(--color-text) 4%, transparent);">
-          <div class="card-title" style="display:inline-block; background:linear-gradient(transparent 66%, var(--color-accent) 66%);">{{ m.title }}</div>
+          <div class="card-title" style="display:inline-block; align-self:flex-start; width:fit-content; background:linear-gradient(transparent 66%, var(--color-accent) 66%);">{{ m.title }}</div>
           <div class="card-body" style="opacity:1; color:color-mix(in srgb, var(--color-text) 65%, transparent);">{{ m.tag }}</div>
         </a>
       </sc-for>
