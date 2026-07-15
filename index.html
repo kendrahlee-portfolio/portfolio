@@ -4,23 +4,6 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script src="./support.js"></script>
-
-<title>Kendra Lee | Marketing & Creative Strategy</title>
-<meta name="description" content="Integrated marketing leader specializing in brand growth, digital strategy, content, partnerships, and community engagement.">
-
-<meta property="og:title" content="Kendra Lee | Marketing & Creative Strategy">
-<meta property="og:description" content="Integrated marketing leader specializing in brand growth, digital strategy, content, partnerships, and community engagement.">
-<meta property="og:url" content="https://www.kendrahlee.com/">
-<meta property="og:type" content="website">
-<meta property="og:image" content="https://kendrahlee-portfolio.github.io/portfolio/images/kendra-lee-social-preview.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Kendra Lee | Marketing & Creative Strategy">
-<meta name="twitter:description" content="Integrated marketing leader specializing in brand growth, digital strategy, content, partnerships, and community engagement.">
-<meta name="twitter:image" content="https://kendrahlee-portfolio.github.io/portfolio/images/kendra-lee-social-preview.png">
-
 </head>
 <body>
 <x-dc>
@@ -51,8 +34,8 @@
   <header style="padding:var(--space-8) var(--space-6) var(--space-8);" data-screen-label="Hero">
     <div style="max-width:1200px; margin:0 auto;">
       <h6 style="color:var(--color-accent-700); margin-bottom:var(--space-4);">Marketing Leadership Portfolio</h6>
-      <h1 style="font-size:68px; max-width:900px; margin-bottom:var(--space-4);">Connecting <span style="background:linear-gradient(transparent 62%, var(--color-accent) 62%);">brand</span>, <span style="background:linear-gradient(transparent 62%, var(--color-accent) 62%);">performance</span>, and <span style="background:linear-gradient(transparent 62%, var(--color-accent) 62%);">community</span> into <span style="background:linear-gradient(transparent 62%, var(--color-accent) 62%);">measurable growth</span>.</h1>
-      <p style="font-size:19px; max-width:640px; color:color-mix(in srgb, var(--color-text) 80%, transparent); margin-bottom:var(--space-6);">Hi, I'm Kendra! 👋 I build marketing strategies that connect brand storytelling, digital growth, partnerships, and operations into one cohesive system that drives measurable business results. I love finding the intersection between creative ideas and smart strategy — and turning those ideas into growth people can actually see.</p>
+      <h1 style="font-size:68px; max-width:900px; margin-bottom:var(--space-4);">Connecting <span style="background:linear-gradient(transparent 62%, var(--color-accent) 62%);">brand</span>, <span style="background:linear-gradient(transparent 62%, var(--color-accent) 62%);">performance</span>, and <span style="background:linear-gradient(transparent 62%, var(--color-accent) 62%);">data</span> to build <span style="background:linear-gradient(transparent 62%, var(--color-accent) 62%);">measurable growth engines</span>.</h1>
+      <p style="font-size:19px; max-width:640px; color:color-mix(in srgb, var(--color-text) 80%, transparent); margin-bottom:var(--space-6);">Hi, I'm Kendra! 👋 I build integrated marketing strategies that connect brand storytelling, digital acquisition, analytics, partnerships, and operations into cohesive systems that drive measurable growth. My work sits at the intersection of creative strategy and performance marketing — turning audience insights into campaigns that attract, engage, and convert.</p>
       <div class="hero-actions" style="display:flex; gap:var(--space-3); flex-wrap:wrap;">
         <a href="#work" class="btn btn-primary" style="padding:14px 22px; font-size:14px;">See Featured Work</a>
         <a href="mailto:kendrahlee@gmail.com" class="btn btn-secondary" style="padding:14px 22px; font-size:14px;">Get in Touch</a>
@@ -71,7 +54,7 @@
     </div>
     <div>
       <p style="font-size:17px; color:color-mix(in srgb, var(--color-text) 85%, transparent);">Great marketing rarely happens in silos. I enjoy connecting the dots — bringing together brand, performance marketing, partnerships, operations, and customer experience so they work as one system instead of separate projects. Whether that means launching a campaign, leading a cross-functional initiative, or figuring out why performance shifted, I'm happiest solving complex problems alongside great people. I lean on data to guide the decisions, but I never lose sight of the story — or the people — behind the numbers.</p>
-      <p style="font-size:15px; color:color-mix(in srgb, var(--color-text) 65%, transparent); margin-top:var(--space-4);">My marketing leadership spans Urban Adventures Companies and the Recreational Boating &amp; Fishing Foundation (RBFF) — across fitness, wellness, hospitality, lifestyle brands, and national nonprofit marketing.</p>
+      <p style="font-size:15px; color:color-mix(in srgb, var(--color-text) 65%, transparent); margin-top:var(--space-4);">My marketing leadership spans Urban Adventures Companies and the Recreational Boating &amp; Fishing Foundation (RBFF) — across fitness, wellness, hospitality, lifestyle brands, and national nonprofit marketing. My experience includes integrated campaigns, paid acquisition strategy, digital optimization, analytics, community engagement, and brand growth.</p>
       <div style="display:flex; flex-wrap:wrap; gap:var(--space-2); margin-top:var(--space-4);">
         <sc-for list="{{ brands }}" as="brand" hint-placeholder-count="7">
           <span class="tag tag-neutral">{{ brand }}</span>
@@ -82,11 +65,32 @@
 
   <hr class="hr" style="margin:0;">
 
+  <!-- SELECTED IMPACT -->
+  <section style="padding:var(--space-8) var(--space-6); max-width:1200px; margin:0 auto;" data-screen-label="Selected Impact">
+    <h6 style="color:var(--color-accent-700);">Selected Impact</h6>
+    <h2 style="margin-bottom:var(--space-6);">A snapshot of the growth I've built</h2>
+    <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:var(--space-4);">
+      <sc-for list="{{ impactCards }}" as="ic" hint-placeholder-count="3">
+        <div class="card" style="border-top:2px solid var(--color-divider); border-radius:0; background:transparent; padding:var(--space-4) var(--space-4) 0 0;">
+          <div class="card-title" style="font-size:20px;">{{ ic.title }}</div>
+          <p class="card-body" style="opacity:1; color:color-mix(in srgb, var(--color-text) 70%, transparent); font-size:14px; margin-bottom:var(--space-2);">{{ ic.subtitle }}</p>
+          <div style="display:flex; flex-direction:column; gap:var(--space-1);">
+            <sc-for list="{{ ic.points }}" as="pt" hint-placeholder-count="3">
+              <div style="font-size:14px; color:var(--color-text);">— {{ pt }}</div>
+            </sc-for>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <hr class="hr" style="margin:0;">
+
   <!-- MY APPROACH -->
   <section style="padding:var(--space-8) var(--space-6); max-width:1200px; margin:0 auto;" data-screen-label="My Approach">
     <h6 style="color:var(--color-accent-700);">My Approach</h6>
-    <h2 style="margin-bottom:var(--space-6);">Four things I keep connected</h2>
-    <div style="display:grid; grid-template-columns:repeat(4, 1fr); gap:var(--space-4);">
+    <h2 style="margin-bottom:var(--space-6);">Five things I keep connected</h2>
+    <div style="display:grid; grid-template-columns:repeat(5, 1fr); gap:var(--space-4);">
       <sc-for list="{{ approach }}" as="a" hint-placeholder-count="4">
         <div class="card" style="border-top:2px solid var(--color-divider); border-radius:0; background:transparent; padding:var(--space-4) var(--space-4) 0 0;">
           <div class="card-title" style="font-size:20px;">{{ a.title }}</div>
@@ -101,11 +105,23 @@
   <!-- STATS -->
   <section style="padding:var(--space-8) var(--space-6); max-width:1200px; margin:0 auto;" data-screen-label="Growth Highlights">
     <h6 style="color:var(--color-accent-700);">Growth &amp; Performance</h6>
-    <h2 style="margin-bottom:var(--space-6);">Results across paid, organic, and community channels</h2>
-    <div style="display:grid; grid-template-columns:repeat(3, 1fr);">
-      <sc-for list="{{ stats }}" as="stat" hint-placeholder-count="6">
+    <h2 style="margin-bottom:var(--space-6);">Building measurable growth across paid, organic, and community channels</h2>
+
+    <h3 style="font-size:18px; margin-bottom:var(--space-3);">Paid Acquisition Growth</h3>
+    <div style="display:grid; grid-template-columns:repeat(4, 1fr); margin-bottom:var(--space-6);">
+      <sc-for list="{{ paidStats }}" as="stat" hint-placeholder-count="4">
         <div style="padding:var(--space-6) var(--space-4) var(--space-6) 0; border-top:2px solid var(--color-divider);">
-          <div style="display:inline-block; font-family:var(--font-heading); font-weight:800; font-size:48px; color:var(--color-text); letter-spacing:-0.02em; line-height:1; background:linear-gradient(transparent 66%, var(--color-accent) 66%);">{{ stat.value }}</div>
+          <div style="display:inline-block; font-family:var(--font-heading); font-weight:800; font-size:44px; color:var(--color-text); letter-spacing:-0.02em; line-height:1; background:linear-gradient(transparent 66%, var(--color-accent) 66%);">{{ stat.value }}</div>
+          <div style="font-size:14px; margin-top:var(--space-2); color:color-mix(in srgb, var(--color-text) 70%, transparent); max-width:260px;">{{ stat.label }}</div>
+        </div>
+      </sc-for>
+    </div>
+
+    <h3 style="font-size:18px; margin-bottom:var(--space-3);">Brand &amp; Community Growth</h3>
+    <div style="display:grid; grid-template-columns:repeat(3, 1fr);">
+      <sc-for list="{{ stats }}" as="stat" hint-placeholder-count="3">
+        <div style="padding:var(--space-6) var(--space-4) var(--space-6) 0; border-top:2px solid var(--color-divider);">
+          <div style="display:inline-block; font-family:var(--font-heading); font-weight:800; font-size:44px; color:var(--color-text); letter-spacing:-0.02em; line-height:1; background:linear-gradient(transparent 66%, var(--color-accent) 66%);">{{ stat.value }}</div>
           <div style="font-size:14px; margin-top:var(--space-2); color:color-mix(in srgb, var(--color-text) 70%, transparent); max-width:260px;">{{ stat.label }}</div>
         </div>
       </sc-for>
@@ -118,7 +134,7 @@
   <section id="work" style="padding:var(--space-8) var(--space-6) var(--space-6); max-width:1200px; margin:0 auto;" data-screen-label="Featured Work">
     <div style="margin-bottom:var(--space-8);">
       <h6 style="color:var(--color-accent-700);">Strategic Marketing Leadership</h6>
-      <h2>Campaigns &amp; experiences that moved the needle</h2>
+      <h2>Campaigns &amp; growth engines built on strategy</h2>
     </div>
 
     <sc-for list="{{ campaigns }}" as="c" hint-placeholder-count="5">
@@ -156,6 +172,9 @@
                 </div>
               </sc-for>
             </div>
+            <sc-if value="{{ c.hasClosing }}" hint-placeholder-val="{{ false }}">
+              <p style="font-size:15px; font-weight:600; margin-top:var(--space-4); color:color-mix(in srgb, var(--color-text) 85%, transparent);">{{ c.closing }}</p>
+            </sc-if>
             <sc-if value="{{ c.hasLink }}" hint-placeholder-val="{{ false }}">
               <a href="{{ c.href }}" target="_blank" rel="noopener" style="display:inline-block; margin-top:var(--space-4); font-family:var(--font-heading); font-weight:800; font-size:13px; color:var(--color-text); text-decoration:none; background:linear-gradient(transparent 62%, var(--color-accent) 62%);">Watch →</a>
             </sc-if>
@@ -267,15 +286,36 @@ class Component extends DCLogic {
   renderVals() {
     const campaignsRaw = [
       {
+        tag: 'Digital Acquisition Strategy',
+        title: 'VIDA Fitness Paid Media Growth Engine',
+        role: 'Q1 2026 — Paid Acquisition & Performance Marketing',
+        body: 'Built a scalable digital acquisition strategy across Meta, Google, and TikTok designed to improve efficiency, increase qualified leads, and connect marketing investment to measurable membership growth.',
+        impact: [
+          { text: 'Restructured paid media around full-funnel objectives: awareness, consideration, and conversion' },
+          { text: 'Leveraged Meta for audience expansion and demand generation' },
+          { text: 'Used Google to capture high-intent prospects already searching for fitness solutions' },
+          { text: 'Optimized creative, audiences, budgets, and conversion paths through ongoing testing' },
+          { text: 'Built stronger performance reporting focused on acquisition outcomes instead of vanity metrics' },
+          { text: '+123% YoY increase in leads, +56% YoY increase in signups' },
+          { text: '\u219337% reduction in cost per lead, \u219310% reduction in cost per signup' },
+          { text: 'Managed optimization across $46K+ quarterly paid media investment' },
+        ],
+        placeholder: 'performance dashboard',
+        image: 'images/vida-fitness-stairs.jpg',
+        closing: 'Built a more efficient acquisition engine by connecting creative strategy, audience insights, media optimization, and measurement.',
+      },
+      {
         tag: 'Integrated Campaign Strategy',
         title: 'Penthouse Pool 2026 Summer Reopening Campaign',
         role: 'Summer 2026 — Penthouse Pool Club',
-        body: 'Led strategy, creative direction, and execution of Penthouse Pool Club\u2019s 2026 summer campaign, repositioning the brand as one of Washington, DC\u2019s premier rooftop destinations through a social-first, full-funnel approach — from teaser content through experiential events and urgency-driven membership pushes.',
+        body: 'Led strategy, creative direction, and execution of Penthouse Pool Club\u2019s 2026 summer campaign, repositioning the brand as one of Washington, DC\u2019s premier rooftop destinations through a social-first, full-funnel growth strategy combining lifestyle storytelling, paid acquisition, influencer partnerships, and experiential marketing.',
         impact: [
           { text: 'Named #1 Spot in Fox 5\u2019s Zip Trip to Navy Yard 5 Must Stops', href: 'https://www.fox5dc.com/video/fmc-j2jhd5q2mvgc7pz0' },
           { text: 'Managed influencer partnerships and on-site collaborations that generated authentic, buzzworthy content' },
           { text: 'Top creative achieved a 4.6% CTR at $0.35 CPC' },
           { text: 'Multiple campaigns sustained 2\u20134%+ CTR with CPCs under $0.70 at scale' },
+          { text: 'Generated 738K+ impressions, 27K clicks, 772 qualified leads, and 645 conversion actions through integrated paid media during peak seasonal demand' },
+          { text: 'Used Meta, Google, TikTok, influencer partnerships, and experiential storytelling to transform a seasonal lifestyle brand into a measurable acquisition campaign' },
         ],
         placeholder: 'campaign photography',
         image: 'images/penthouse-pool.jpg',
@@ -307,12 +347,14 @@ class Component extends DCLogic {
         tag: 'Full-Funnel Marketing',
         title: '\u201cFeel Something\u201d Campaign',
         role: 'January 2026 — VIDA Fitness',
-        body: 'Managed and executed a January brand-reset campaign that shifted VIDA away from traditional New Year urgency toward emotional reconnection, utilizing a social-first strategy spanning paid social, a referral engine, and an open house activation, reinforced in-club through screens and instructor content.',
+        body: 'Developed and executed a full-funnel brand and acquisition campaign designed to strengthen VIDA\u2019s emotional connection with audiences while driving measurable membership growth, utilizing a social-first strategy spanning paid social, a referral engine, and an open house activation, reinforced in-club through screens and instructor content.',
         impact: [
           { text: 'Scaled the \u201cCheck Your Spark\u201d interactive quiz on paid social to drive segmented landing page traffic' },
           { text: 'Directed creator and influencer management for organic, UGC-driven creative, then scaled top performers into paid media' },
           { text: 'Quiz carousel drove a 5.6% CTR, 96 submitted applications ($51.63 CPA), and 86 completed registrations ($57.63 CPA)' },
           { text: 'Extended into retention via themed content pillars (Feel Strong, Feel Zen, Feel Energized)' },
+          { text: 'Increased paid-driven signups 283% YoY, reduced blended acquisition cost 57% YoY' },
+          { text: 'Generated 824 leads and 755 conversion actions across paid channels' },
         ],
         placeholder: 'campaign creative',
         image: 'images/feel-something.jpg',
@@ -357,6 +399,8 @@ class Component extends DCLogic {
       ...c,
       hasImage: !!c.image,
       noImage: !c.image,
+      placeholder: c.placeholder || 'campaign photography',
+      hasClosing: !!c.closing,
       hasExtra: !!(c.extraImages && c.extraImages.length),
       extraImages: c.extraImages || [],
       hasLink: !!c.href,
@@ -371,15 +415,24 @@ class Component extends DCLogic {
         { title: 'Brand 🎨', body: 'Build brands people remember, trust, and genuinely want to be part of.' },
         { title: 'Performance 📈', body: 'Turn creative ideas into measurable growth through thoughtful strategy, testing, and optimization.' },
         { title: 'Community 🤝', body: 'Strengthen relationships through partnerships, experiences, and authentic engagement that creates lasting loyalty.' },
+        { title: 'Analytics 📊', body: 'Turn marketing data into decisions through measurement, testing, reporting, and continuous optimization.' },
         { title: 'Operations ⚙️', body: 'Build scalable marketing systems that align teams, improve execution, and support long-term business growth.' },
       ],
+      impactCards: [
+        { title: 'Digital Acquisition', subtitle: 'Built paid media systems generating:', points: ['1,446 Q1 leads (+123% YoY)', '1,143 Q1 signups (+56% YoY)', '37% reduction in cost per lead'] },
+        { title: 'Seasonal Growth Campaigns', subtitle: 'Penthouse Pool Club:', points: ['738K+ impressions', '27K clicks', '645 conversion actions'] },
+        { title: 'Brand Growth', subtitle: 'VIDA Fitness:', points: ['12.7M+ social impressions', '85% audience growth', 'Multi-channel campaigns across six consumer brands'] },
+      ],
+      paidStats: [
+        { value: '+123%', label: 'YoY increase in paid-generated leads' },
+        { value: '+56%', label: 'YoY increase in paid-driven signups' },
+        { value: '\u219337%', label: 'Reduction in cost per lead' },
+        { value: '\u219310%', label: 'Reduction in cost per signup' },
+      ],
       stats: [
-        { value: '283%', label: 'YoY increase in paid-driven signup volume' },
-        { value: '57%', label: 'Reduction in blended cost per acquisition (CPA)' },
-        { value: '12x', label: 'YoY increase in paid-driven Free Pass leads' },
         { value: '85%', label: 'Social audience growth (VIDA)' },
-        { value: '$660K', label: 'Annual marketing budget oversight' },
         { value: '12.7M+', label: 'Social impressions generated' },
+        { value: '$660K', label: 'Annual marketing budget oversight' },
       ],
       campaigns,
       moreWork: [
@@ -390,7 +443,7 @@ class Component extends DCLogic {
         { title: 'VIDA Trainer Tips', tag: 'Ongoing video series — trainer expert positioning', href: 'https://www.youtube.com/playlist?list=PLlGe1bG5ZoFKyBPJ02Pttc4zl6oQNJOT8' },
         { title: 'VIDA Pilates: Inside the Studio', tag: 'Brand storytelling — Classical Pilates awareness', href: 'https://youtube.com/playlist?list=PLlGe1bG5ZoFJZPtvNXZo1h60Mo8hMe8HN&si=qkItxuERbWIJ2B72' },
         { title: 'October Om', tag: '2024 — Monthly yoga content series', href: 'https://youtu.be/0Z6cEs8-YSY?si=M7viZpEaivQ9yCtA' },
-        { title: 'Take Me Fishing (RBFF)', tag: 'National nonprofit marketing for the Recreational Boating & Fishing Foundation \u2014 social strategy, a Disney partnership, influencer collaborations, and nationwide campaigns supporting conservation, outdoor recreation, and large-scale audience engagement', href: 'https://takemefishing.org/' },
+        { title: 'Take Me Fishing (RBFF)', tag: 'National nonprofit marketing experience with the Recreational Boating & Fishing Foundation (RBFF), supporting audience growth, social strategy, partnerships, influencer collaborations, and nationwide campaigns connecting people with outdoor recreation and conservation', href: 'https://takemefishing.org/' },
       ],
       speaking: [
         { when: 'Mar 2026', role: 'Health & Fitness Association Conference & Expo — Speaker', topic: 'Make Your Social Media Build More Than Just Muscle', href: 'https://hub.healthandfitness.org/hfa-show-speakers' },
