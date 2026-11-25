@@ -324,3 +324,6 @@ a:hover { text-decoration-thickness: 2px; }
   .talks .what { grid-column: auto; }
   .contact .btn { flex: 1 1 100%; }
 }
+
+/* keep result circles on screen */
+.result-num .circled { margin-left: 0; }
