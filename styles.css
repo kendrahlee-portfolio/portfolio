@@ -217,6 +217,13 @@ a:hover { text-decoration-thickness: 2px; }
 .case-media .fpsa-councils img { width: 100%; height: 100%; aspect-ratio: 1; object-fit: contain; }
 .fpsa-more { margin: 0; padding: 14px clamp(20px, 3vw, 32px) 22px; font-size: 14px; color: var(--graphite); }
 
+/* FPSA results panel */
+.fpsa-bars { --fpsa-navy: #003d69; --fpsa-teal: #0097ae; --fpsa-green: #66bd57; background: linear-gradient(160deg, var(--fpsa-navy) 0%, #00557f 100%); color: #fff; position: relative; }
+.fpsa-bars::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 5px; background: linear-gradient(90deg, var(--fpsa-teal), var(--fpsa-green)); }
+.fpsa-bars .bars-sub { color: rgba(255,255,255,.75); }
+.fpsa-bars .bar { background: rgba(255,255,255,.14); }
+.fpsa-bars .bar i { background: linear-gradient(90deg, var(--fpsa-teal), var(--fpsa-green)); border-right: 0; }
+
 /* District of VIDA */
 .feature { display: grid; grid-template-columns: minmax(0, 6fr) minmax(0, 5fr); gap: clamp(32px, 6vw, 88px); align-items: center; }
 .feature img { width: 100%; max-height: 640px; object-fit: contain; background: #fff; border: 1px solid var(--rule); }
