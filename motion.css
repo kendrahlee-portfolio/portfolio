@@ -80,15 +80,31 @@ button.btn { font-family: var(--text); cursor: pointer; }
 .pv main, .pv footer { overflow-x: clip; }
 
 /* FPSA panels in the portfolio's colors (FPSA's own logos and swatches stay as content) */
-.pv .fpsa-master { background: var(--ink); }
-.pv .fpsa-master::after { background: var(--rose); }
-.pv .fpsa-panel, .pv .cultivate-panel { border-color: var(--rule); }
-.pv .fpsa-swatches > p, .pv .fpsa-programs > p, .pv .cultivate-panel > p { color: var(--ink); }
-.pv .fpsa-bars { background: var(--ink); }
-.pv .fpsa-bars::after { background: var(--rose); }
-.pv .fpsa-bars .bar { background: rgba(255,255,255,.12); }
-.pv .fpsa-bars .bar i { background: linear-gradient(90deg, var(--blush), var(--rose)); }
-.pv .cultivate-pieces li { background: #fbe9ef; color: var(--ink); }
+/* FPSA section uses FPSA's own colors: navy, sea blue, teal, green. No pink. */
+#work-fpsa { --rose: #0097ae; --blush: #d6eef2; --marker: #d6eef2; }
+#work-fpsa .work-group-title { border-bottom-color: #003d69; }
+#work-fpsa .work-group-title h3 { color: #003d69; }
+#work-fpsa .case h4 { color: #003d69; }
+#work-fpsa .case-meta strong { color: #007198; }
+#work-fpsa .figures { border-top-color: #003d69; }
+#work-fpsa .figures dt { color: #003d69; }
+#work-fpsa .points li::before { background: #66bd57; }
+#work-fpsa .note { color: #007198; }
+#work-fpsa .note-arrow path { stroke: #007198; }
+#work-fpsa .more summary { border-color: #003d69; color: #003d69; }
+#work-fpsa .more summary::before { color: #0097ae; }
+#work-fpsa .more summary:hover { background: #003d69; color: #fff; }
+#work-fpsa .more summary:hover::before { color: #66bd57; }
+.pv .fpsa-master { background: linear-gradient(135deg, #003d69 0%, #007198 55%, #0097ae 100%); }
+.pv .fpsa-master::after { background: linear-gradient(90deg, #0097ae, #66bd57); }
+.pv .fpsa-panel, .pv .cultivate-panel { border-color: #c9dbe5; }
+.pv .fpsa-swatches > p, .pv .fpsa-programs > p { color: #003d69; }
+.pv .cultivate-panel > p { color: #1b3c49; }
+.pv .fpsa-bars { background: linear-gradient(160deg, #003d69 0%, #00557f 100%); }
+.pv .fpsa-bars::after { background: linear-gradient(90deg, #0097ae, #66bd57); }
+.pv .fpsa-bars .bar { background: rgba(255,255,255,.14); }
+.pv .fpsa-bars .bar i { background: linear-gradient(90deg, #0097ae, #66bd57); }
+.pv .cultivate-pieces li { background: #e6f3f5; color: #1b3c49; }
 
 /* Collapsible "How I did it" */
 .more { margin-top: 6px; }
