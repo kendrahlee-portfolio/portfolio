@@ -209,13 +209,16 @@ a:hover { text-decoration-thickness: 2px; }
 .fpsa-master { background: linear-gradient(135deg, var(--fpsa-navy) 0%, var(--fpsa-sea) 55%, var(--fpsa-teal) 100%); padding: clamp(32px, 5vw, 56px) clamp(24px, 4vw, 44px) 24px; color: #fff; position: relative; }
 .fpsa-master::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 5px; background: linear-gradient(90deg, var(--fpsa-teal), var(--fpsa-green)); }
 .case-media .fpsa-master img { width: min(100%, 300px); height: auto; aspect-ratio: auto; object-fit: contain; }
-.fpsa-master p, .fpsa-councils > p { margin: 16px 0 0; font-size: 14px; font-weight: 600; }
-.fpsa-councils { padding: 22px clamp(20px, 3vw, 32px) 8px; }
-.fpsa-councils > p { margin: 0 0 12px; color: var(--fpsa-navy); }
-.fpsa-councils ul { list-style: none; display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
-.fpsa-councils li { border: 1px solid #e4e9ee; aspect-ratio: 1; }
-.case-media .fpsa-councils img { width: 100%; height: 100%; aspect-ratio: 1; object-fit: contain; }
-.fpsa-more { margin: 0; padding: 14px clamp(20px, 3vw, 32px) 22px; font-size: 14px; color: var(--graphite); }
+.fpsa-master p { margin: 16px 0 0; font-size: 14px; font-weight: 600; }
+.fpsa-swatches, .fpsa-programs { padding: 22px clamp(20px, 3vw, 32px) 0; }
+.fpsa-programs { padding-bottom: 26px; }
+.fpsa-swatches > p, .fpsa-programs > p { margin: 0 0 12px; font-size: 14px; font-weight: 600; color: var(--fpsa-navy); }
+.fpsa-swatches ul { list-style: none; display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+.fpsa-swatches li { font-size: 12px; line-height: 1.35; color: var(--graphite); }
+.fpsa-swatches span { display: block; height: 44px; background: var(--c); margin-bottom: 6px; }
+.fpsa-programs ul { list-style: none; display: grid; gap: 8px; }
+.fpsa-programs li { border: 1px solid #e4e9ee; height: 84px; display: flex; align-items: center; justify-content: center; padding: 12px 20px; }
+.case-media .fpsa-programs img { width: auto; height: auto; max-width: 100%; max-height: 100%; aspect-ratio: auto; object-fit: contain; }
 
 /* FPSA results panel */
 .fpsa-bars { --fpsa-navy: #003d69; --fpsa-teal: #0097ae; --fpsa-green: #66bd57; background: linear-gradient(160deg, var(--fpsa-navy) 0%, #00557f 100%); color: #fff; position: relative; }
