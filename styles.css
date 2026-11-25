@@ -1,8 +1,8 @@
 /* Kendra Lee portfolio
-   Type echoes the logo: a high-contrast Didone for display, a clean grotesk for reading.
+   One sturdy grotesk (Schibsted Grotesk) for everything; weight does the hierarchy work.
    Yellow is the logo's highlighter, used as a bar behind text, never as a fill for UI. */
 
-@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..700&family=Hanken+Grotesk:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:ital,wght@0,400..900;1,400..900&display=swap');
 
 :root {
   --paper: #fbfbf9;
@@ -12,8 +12,8 @@
   --wash: #f0efea;
   --marker: #fcef6a;
 
-  --display: "Bodoni Moda", "Didot", "Bodoni 72", Georgia, serif;
-  --text: "Hanken Grotesk", "Helvetica Neue", Arial, sans-serif;
+  --display: "Schibsted Grotesk", "Helvetica Neue", Arial, sans-serif;
+  --text: "Schibsted Grotesk", "Helvetica Neue", Arial, sans-serif;
 
   --wrap: 1160px;
   --gutter: clamp(20px, 5vw, 56px);
@@ -41,9 +41,9 @@ ul { margin: 0; padding: 0; }
 
 h1, h2, h3 {
   font-family: var(--display);
-  font-weight: 500;
-  line-height: 1.08;
-  letter-spacing: -0.01em;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.025em;
   margin: 0;
 }
 h2 { font-size: clamp(34px, 4.4vw, 52px); }
@@ -101,10 +101,10 @@ a:hover { text-decoration-thickness: 2px; }
   gap: clamp(40px, 6vw, 96px); align-items: end;
 }
 .hero h1 {
-  font-size: clamp(42px, 6vw, 80px);
+  font-size: clamp(40px, 5.6vw, 76px);
   line-height: 1.04;
-  letter-spacing: -0.02em;
-  max-width: 16ch;
+  letter-spacing: -0.035em;
+  max-width: 17ch;
   margin-bottom: 36px;
 }
 .hero-intro { font-size: 20px; line-height: 1.55; max-width: 34em; margin-bottom: 32px; }
@@ -126,7 +126,7 @@ a:hover { text-decoration-thickness: 2px; }
 .result { padding: 28px 28px 32px 0; border-bottom: 1px solid var(--rule); }
 .result:not(:nth-child(3n+1)) { padding-left: 28px; border-left: 1px solid var(--rule); }
 .result-num {
-  font-family: var(--display); font-weight: 500;
+  font-family: var(--display); font-weight: 700;
   font-size: clamp(52px, 6vw, 76px); line-height: 1; letter-spacing: -0.03em;
   font-variant-numeric: lining-nums;
 }
@@ -171,12 +171,12 @@ a:hover { text-decoration-thickness: 2px; }
 .case-thumbs img { aspect-ratio: 1 / 1; object-position: top; }
 .case-meta { font-size: 14px; color: var(--graphite); margin-bottom: 10px; }
 .case-meta strong { color: var(--ink); font-weight: 700; }
-.case h4 { font-family: var(--display); font-weight: 500; font-size: clamp(28px, 3vw, 38px); line-height: 1.1; margin: 0 0 18px; letter-spacing: -0.01em; }
+.case h4 { font-family: var(--display); font-weight: 700; font-size: clamp(28px, 3vw, 38px); line-height: 1.1; margin: 0 0 18px; letter-spacing: -0.01em; }
 .case-body > p { max-width: 38em; }
 
 .figures { display: grid; grid-template-columns: repeat(auto-fit, minmax(118px, 1fr)); gap: 0; margin: 28px 0; border-top: 1px solid var(--ink); }
 .figures div { padding: 14px 16px 14px 0; border-bottom: 1px solid var(--rule); }
-.figures dt { font-family: var(--display); font-size: 34px; line-height: 1; letter-spacing: -0.02em; }
+.figures dt { font-family: var(--display); font-weight: 700; font-size: 32px; line-height: 1; letter-spacing: -0.02em; }
 .figures dd { margin: 6px 0 0; font-size: 14px; line-height: 1.4; color: var(--graphite); }
 
 .points { list-style: none; margin: 0 0 8px; }
@@ -188,26 +188,26 @@ a:hover { text-decoration-thickness: 2px; }
 /* FPSA visual panels (no photography, so the panels show the actual structure and data) */
 .panel { background: var(--wash); padding: clamp(32px, 4vw, 52px); }
 .tree { list-style: none; }
-.tree-root { font-family: var(--display); font-size: clamp(56px, 7vw, 88px); line-height: 1; letter-spacing: -0.02em; }
+.tree-root { font-family: var(--display); font-weight: 800; font-size: clamp(56px, 7vw, 88px); line-height: 1; letter-spacing: -0.02em; }
 .tree-root .marked { padding: 0 0.12em; }
 .tree-children { list-style: none; margin-top: 28px; border-left: 2px solid var(--ink); padding-left: 22px; display: grid; gap: 18px; }
 .tree-children li { position: relative; }
 .tree-children li::before { content: ""; position: absolute; left: -24px; top: 0.8em; width: 16px; height: 2px; background: var(--ink); }
-.tree-children strong { display: block; font-family: var(--display); font-weight: 500; font-size: 26px; line-height: 1.15; }
+.tree-children strong { display: block; font-family: var(--display); font-weight: 700; font-size: 24px; line-height: 1.15; }
 .tree-children span { font-size: 14px; color: var(--graphite); }
 
 .bars-title { font-weight: 700; font-size: 15px; margin-bottom: 4px; }
 .bars-sub { font-size: 14px; color: var(--graphite); margin-bottom: 24px; }
 .bars { list-style: none; display: grid; gap: 18px; }
 .bar-row { display: grid; grid-template-columns: 1fr auto; gap: 4px 12px; font-size: 15px; }
-.bar-row b { font-family: var(--display); font-size: 22px; font-weight: 600; line-height: 1; }
+.bar-row b { font-family: var(--display); font-size: 20px; font-weight: 700; line-height: 1; }
 .bar { grid-column: 1 / -1; height: 14px; background: #fff; }
 .bar i { display: block; height: 100%; background: var(--marker); border-right: 2px solid var(--ink); }
 
 /* District of VIDA */
 .feature { display: grid; grid-template-columns: minmax(0, 6fr) minmax(0, 5fr); gap: clamp(32px, 6vw, 88px); align-items: center; }
 .feature img { width: 100%; max-height: 640px; object-fit: contain; background: #fff; border: 1px solid var(--rule); }
-.feature .lede { font-family: var(--display); font-size: clamp(26px, 2.8vw, 34px); line-height: 1.2; margin: 18px 0 20px; }
+.feature .lede { font-family: var(--display); font-weight: 600; font-size: clamp(24px, 2.6vw, 30px); line-height: 1.25; letter-spacing: -0.015em; margin: 18px 0 20px; }
 
 /* Series list */
 .series { display: grid; grid-template-columns: 1fr 1fr; column-gap: clamp(32px, 6vw, 88px); list-style: none; border-top: 1.5px solid var(--ink); }
@@ -222,7 +222,7 @@ a:hover { text-decoration-thickness: 2px; }
 .talks time { font-size: 15px; color: var(--graphite); font-variant-numeric: tabular-nums; }
 .talks .where { font-weight: 600; font-size: 17px; }
 .talks .where span { display: block; font-weight: 400; font-size: 14px; color: var(--graphite); }
-.talks .what { font-family: var(--display); font-size: 21px; line-height: 1.3; }
+.talks .what { font-family: var(--display); font-weight: 600; font-size: 19px; line-height: 1.35; }
 .talks .what a { text-decoration-color: color-mix(in srgb, var(--ink) 35%, transparent); }
 .recognition { margin-top: 40px; display: grid; grid-template-columns: 140px 1fr; gap: 24px; }
 .recognition h3 { font-family: var(--text); font-size: 15px; font-weight: 700; letter-spacing: 0; padding-top: 3px; }
