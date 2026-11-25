@@ -1,16 +1,20 @@
-/* Kendra Lee portfolio
-   One sturdy grotesk (Schibsted Grotesk) for everything; weight does the hierarchy work.
-   Yellow is the logo's highlighter, used as a bar behind text, never as a fill for UI. */
+/* Kendra Lee portfolio, 2026 brand
+   Rose, charcoal, and butter. Newsreader italic for the wordmark and big statements,
+   Schibsted Grotesk for everything you read. The hand-drawn rose circle marks the name
+   and the results that matter; the butter highlighter marks key phrases. */
 
-@import url('https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:ital,wght@0,400..900;1,400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@1,6..72,400..600&family=Schibsted+Grotesk:ital,wght@0,400..900;1,400..900&display=swap');
 
 :root {
-  --paper: #fbfbf9;
-  --ink: #1d1d1f;
-  --graphite: #5b5e66;
-  --rule: #dedcd6;
-  --wash: #f0efea;
-  --marker: #fcef6a;
+  --paper: #faf9f6;
+  --ink: #34353a;
+  --graphite: #66686f;
+  --rule: #e2e0da;
+  --wash: #f1efea;
+  --marker: #fbe88a;
+  --rose: #d45c80;
+  --blush: #f4d2dc;
+  --serif: "Newsreader", Georgia, "Times New Roman", serif;
 
   --display: "Schibsted Grotesk", "Helvetica Neue", Arial, sans-serif;
   --text: "Schibsted Grotesk", "Helvetica Neue", Arial, sans-serif;
@@ -49,10 +53,10 @@ h1, h2, h3 {
 h2 { font-size: clamp(34px, 4.4vw, 52px); }
 h3 { font-size: clamp(26px, 2.6vw, 32px); }
 
-a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 4px; }
+a { color: inherit; text-decoration-color: var(--rose); text-decoration-thickness: 1.5px; text-underline-offset: 4px; }
 a:hover { text-decoration-thickness: 2px; }
 :focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
-::selection { background: var(--marker); }
+::selection { background: var(--blush); }
 
 .wrap { max-width: var(--wrap); margin: 0 auto; padding: 0 var(--gutter); }
 .muted { color: var(--graphite); }
@@ -88,7 +92,14 @@ a:hover { text-decoration-thickness: 2px; }
   border-bottom: 1px solid var(--rule);
 }
 .nav .wrap { display: flex; align-items: center; gap: 28px; min-height: 68px; }
-.nav-logo img { height: 44px; width: auto; }
+.nav-logo { text-decoration: none; }
+.wordmark { position: relative; display: inline-block; padding: 0.42em 0.75em 0.44em; font-family: var(--serif); font-style: italic; font-weight: 500; font-size: 27px; line-height: 1; color: var(--ink); white-space: nowrap; margin-left: -0.75em; }
+
+/* The signature: a hand-drawn rose circle */
+.ring { position: absolute; left: 0; top: 0; width: 100%; height: 100%; overflow: visible; pointer-events: none; }
+.ring path { fill: none; stroke: var(--rose); stroke-width: 2.5px; stroke-linecap: round; vector-effect: non-scaling-stroke; }
+.circled { position: relative; display: inline-block; padding: 0.18em 0.46em 0.2em; margin: -0.18em -0.46em -0.2em; }
+.contact .circled .ring path { stroke-width: 3px; }
 .nav-links { display: flex; gap: 24px; margin-left: auto; list-style: none; }
 .nav-links a { text-decoration: none; font-size: 15px; font-weight: 500; }
 .nav-links a:hover { text-decoration: underline; }
@@ -101,10 +112,13 @@ a:hover { text-decoration-thickness: 2px; }
   gap: clamp(40px, 6vw, 96px); align-items: end;
 }
 .hero h1 {
-  font-size: clamp(40px, 5.6vw, 76px);
-  line-height: 1.04;
-  letter-spacing: -0.035em;
-  max-width: 17ch;
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 500;
+  font-size: clamp(42px, 6vw, 82px);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  max-width: 16ch;
   margin-bottom: 36px;
 }
 .hero-intro { font-size: 20px; line-height: 1.55; max-width: 34em; margin-bottom: 32px; }
@@ -181,7 +195,7 @@ a:hover { text-decoration-thickness: 2px; }
 
 .points { list-style: none; margin: 0 0 8px; }
 .points li { position: relative; padding-left: 22px; margin-bottom: 8px; font-size: 16px; line-height: 1.5; max-width: 40em; }
-.points li::before { content: ""; position: absolute; left: 0; top: 0.62em; width: 10px; height: 4px; background: var(--ink); }
+.points li::before { content: ""; position: absolute; left: 0; top: 0.62em; width: 10px; height: 4px; background: var(--rose); }
 .case-links { display: flex; flex-wrap: wrap; gap: 10px 24px; margin-top: 20px; }
 .case-links a { font-weight: 600; font-size: 15px; }
 
@@ -268,10 +282,10 @@ a:hover { text-decoration-thickness: 2px; }
 .aside p { font-size: 16px; color: var(--graphite); }
 
 /* Contact */
-.contact { background: var(--marker); padding: var(--section) 0; }
-.contact h2 { max-width: 18ch; margin-bottom: 36px; }
-.contact .btn:hover { background: var(--ink); color: var(--marker); }
-.contact .btn-solid { color: var(--marker); }
+.contact { background: var(--blush); padding: var(--section) 0; }
+.contact h2 { max-width: 20ch; margin-bottom: 44px; font-family: var(--serif); font-style: italic; font-weight: 500; letter-spacing: -0.01em; line-height: 1.15; font-size: clamp(34px, 4.6vw, 56px); }
+.contact .btn:hover { background: var(--ink); color: var(--blush); }
+.contact .btn-solid { color: var(--blush); }
 .contact .btn-solid:hover { background: transparent; color: var(--ink); }
 .footnote { margin-top: 56px; font-size: 14px; }
 
