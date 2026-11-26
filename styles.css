@@ -327,3 +327,12 @@ a:hover { text-decoration-thickness: 2px; }
 
 /* keep result circles on screen */
 .result-num .circled { margin-left: 0; }
+
+/* the world of kendra lee footer */
+.wokl { display: flex; flex-direction: column; align-items: center; gap: 12px; margin-top: 64px; text-align: center; }
+.wokl img { display: block; width: 375px; max-width: 90vw; height: auto; }
+.wokl-links { margin: 0; font-size: 14px; font-weight: 600; color: rgba(43,43,43,.4); }
+.wokl-links a { color: #c9466c; text-underline-offset: 4px; }
+.wokl + .footnote { margin-top: 40px; }
+.about-side .headshot { display: block; width: 100%; max-width: 300px; height: auto; margin-top: 36px; border-radius: 160px 160px 22px 22px; transform: rotate(-2deg); box-shadow: 10px 10px 0 var(--rose, #e8577e); }
+@media (max-width: 900px) { .about-side .headshot { max-width: 220px; margin-top: 24px; } }
